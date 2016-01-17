@@ -61,6 +61,303 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-C-Develop-On-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/17/C-Develop-On-Ubuntu/" class="article-date">
+  <time datetime="2016-01-17T12:25:13.000Z" itemprop="datePublished">2016-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/17/C-Develop-On-Ubuntu/">C++ Develop On Ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="this_blog_writting_entry"><a href="#this_blog_writting_entry" class="headerlink" title="this blog writting entry"></a>this blog writting entry</h2><p><a href="http://isnowfy.github.io/simple" target="_blank" rel="external">http://isnowfy.github.io/simple</a></p>
+<p>###(1)<br>iwconfig</p>
+<p>###(2)<br>iwconfig wlan0 mode monitor</p>
+<p>###(3)<br>iwconfig wlan0 channel 11</p>
+<p>###(4)<br>iwlist wlan0 channel</p>
+<p>CodeLite<br>Code::Blocks<br>clang+llvm<br>vim 用户：45%eclipse 用户：30%kscope/kate/kdevelop 用户：15%emacs 用户：5%  win虚拟机+source insight用户：5%</p>
+<p>svn/hg/git</p>
+<p>著作权归作者所有。<br>商业转载请联系作者获得授权，非商业转载请注明出处。<br>作者：pansz<br>链接：<a href="https://www.zhihu.com/question/19848310/answer/15122904" target="_blank" rel="external">https://www.zhihu.com/question/19848310/answer/15122904</a><br>来源：知乎</p>
+<p>调试：从 Linus 大神开始，printf 就一直是调试利器，上面虽然没有一个人提到 printf 是调试利器，但没人敢不承认它。——关于这一点在现实中会存在许多变种，例如可以定制自己的宏实现分标志，分级别，重定向到 syslog，或者文件，远程 udp socket，等等。相关的工具打造好了之后，你获取信息会很精准而方便。我个人经常使用 udp socket 来接受日志输出。</p>
+<p>valgrind 内存泄露检查<br>doxygen 文档组织工具</p>
+<p>编辑：vim构建：基于scons构造了一套整合thrift、gcc、cpplint的编译环境自动构建：Jenkins（hudson）调试：线上google-breakpad，线下gdb。开源chromium里的logging模块valgrind版本控制：svn、git单测：googletest</p>
+<p>Coding Style : cpplint.py <a href="http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.pyStyle" target="_blank" rel="external">http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.pyStyle</a> formater : astyle <a href="http://astyle.sourceforge.net/astyle.html" target="_blank" rel="external">http://astyle.sourceforge.net/astyle.html</a><br>Test Framework : DejaGnu</p>
+<p>LLVM 编译器后台，能够做编译期间优化、链接优化，代码生成等<br>CLANG是APPLE开发的配合LLVM一起使用的编译器（LLVM与GCC难以配合及BSD开源问题）<br><a href="https://linuxtoy.org/archives/llvm-and-clang.html" target="_blank" rel="external">https://linuxtoy.org/archives/llvm-and-clang.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/17/C-Develop-On-Ubuntu/" data-id="cijijpa1s000c02v4zb50uhvv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Install-Octopress-In-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/17/Install-Octopress-In-Ubuntu/" class="article-date">
+  <time datetime="2016-01-17T12:20:50.000Z" itemprop="datePublished">2016-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/17/Install-Octopress-In-Ubuntu/">Install Octopress In Ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用Octopress搭建个人博客<br>2016-01-16<br><a href="http://ihacklog.com/post/how-to-setup-an-octopress-blog-on-github.html" target="_blank" rel="external">http://ihacklog.com/post/how-to-setup-an-octopress-blog-on-github.html</a></p>
+<p><a href="http://shengmingzhiqing.com/blog/setup-octopress-with-github-pages.html/" target="_blank" rel="external">http://shengmingzhiqing.com/blog/setup-octopress-with-github-pages.html/</a></p>
+<p>(1) 安装curl git-core<br>sudo apt-get install curl git-core</p>
+<p>(2)安装RVM(Ruby Version Manager)<br>curl -s <a href="https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer" target="_blank" rel="external">https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer</a></p>
+<p><a href="http://sharadchhetri.com/2014/06/29/how-to-install-octopress-on-ubuntu-14-04-lts/" target="_blank" rel="external">http://sharadchhetri.com/2014/06/29/how-to-install-octopress-on-ubuntu-14-04-lts/</a></p>
+<p>sudo su cd /opt apt-get install curl curl -sSL <a href="https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer" target="_blank" rel="external">https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer</a> | bash -s stable</p>
+<p>source /etc/profile.d/rvm.sh</p>
+<p>curl -L -x socks5://127.0.0.1 <a href="https://get.rvm.io" target="_blank" rel="external">https://get.rvm.io</a> | bash -s stable –ruby</p>
+<p><a href="http://chenshen.leanote.com/post/Ubuntu%E5%AE%89%E8%A3%85octopress%E6%95%99%E7%A8%8B" target="_blank" rel="external">http://chenshen.leanote.com/post/Ubuntu%E5%AE%89%E8%A3%85octopress%E6%95%99%E7%A8%8B</a></p>
+<p><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">http://ibruce.info/2013/11/22/hexo-your-blog/</a></p>
+<p><a href="http://www.tuicool.com/articles/6vqaEz" target="_blank" rel="external">http://www.tuicool.com/articles/6vqaEz</a> bundle install sudo gem install rake -v ‘10.5.0’ sudo gem install RedCloth -v ‘4.2.9’ sudo gem install addressable -v ‘2.3.8’ sudo gem install blankslate -v ‘2.1.2.4’ sudo gem install chunky_png -v ‘1.3.5’ sudo gem install fast-stemmer -v ‘1.0.2’ sudo gem install classifier-reborn -v ‘2.0.4’ sudo gem install execjs -v ‘2.6.0’ sudo gem install coffee-script -v ‘2.4.1’ sudo gem install colorator -v ‘0.1’ …</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/17/Install-Octopress-In-Ubuntu/" data-id="cijijpa1k000402v4vf7lgk37" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-About-WebDeveloper" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/17/About-WebDeveloper/" class="article-date">
+  <time datetime="2016-01-17T12:19:05.000Z" itemprop="datePublished">2016-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/17/About-WebDeveloper/">About WebDeveloper</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.zhihu.com/question/26339902" target="_blank" rel="external">https://www.zhihu.com/question/26339902</a></p>
+<p>以下的内容无图，有gif配图的请看，在线图文地址：4. web前端开发分享-css,js工具篇web前端开发乃及其它的相关开发，推荐sublime text, webstorm(jetbrains公司系列产品)这两个的原因在于，有个技术叫emmet, Emmet Documentation，而这两个对他的支持是：sublime text 是所有编辑器里边支持emmet比较好的的唯一一款。webstorm是所有编辑器里边唯一内置emmet的一款，并且将emmet的精神往前推动的一款。 phpstorm，idea包括所有webstorm的功能。只是phpstorm是针对phper的，idea是针对javaer，webstorm针对前端er。 他们的详细对比： <a href="http://www.36ria.com/5884一" target="_blank" rel="external">http://www.36ria.com/5884一</a>. css工具:1. emmet Emmet Documentationa. 可以以插件的形式安装在dreamweaver,notepad++,editplus,sublime各个编辑器上。Zen Coding: 一种快速编写HTML/CSS代码的方法前端观察zen coding更名为emmet，新加更多特性前端观察zen coding更新到 0.7前端观察zen coding资源更新前端观察zen coding的dreamweaver插件安装教程前端观察emmet在sublime上的效果：1). css ：他与其它编辑器的区别在于细节上，比如ctrl,alt+方向键可以修和里边的数值2). html 效果：3). sublime的emmet规则修改：packages-&gt;Emmet-&gt;emmet-&gt;snippets.jsonb. 只有一个例外jetbrain公司的产品线：webstorm,phpstorm,intellij idea都是内置的，不需要安装。1).写js的效果：2). webstorm的emmet规则修改：Files -&gt; settings -&gt; Live Templates2. css压缩办法：a. 通过正则五步替换法，适用于任何编辑器：五步整理你的css文件b. 模块化工具二. js工具：1. 压缩等：Javascript代码压缩与加密解密美化器等各种小工具 -&gt; JS百宝箱在线压缩JS压缩, CSS压缩, javascript compress, js在线压缩，javascript在线压缩，css在线压缩，YUI Compressor压缩，Google Closure Compiler压缩，js压缩，uglifyjs压缩，javascript压缩，js美化，javascript美化，js加密，js解密，js混淆，javascript加密，javascript解密，js格式化，javascript格式化在线压缩在线工具 —工具集2. 以emmet的方式开发js,php,jsp,java and so on。Js,jQuery版Zencoding之webstorm &amp; phpstormphp版Zencoding之 phpstorm3. firebug,chrome调试工具的使用： chrome developer tool 调试技巧chrome调试作为Web开发人员，我为什么喜欢Google Chrome浏览器chrome的调试<a href="https://developers.google.com/chrome-developer-tools/docs/commandline-apichrome" target="_blank" rel="external">https://developers.google.com/chrome-developer-tools/docs/commandline-apichrome</a> console 命令详解Firebug入门指南Firebug入门指南Firebug控制台详解Firebug控制台详解<a href="https://developers.google.com/chrome-developer-tools/docs/mobile-emulationchrome移动版调试Android上的远程调试【译】Android上的远程调试用Chrome开发者工具做JavaScript性能分析用Chrome开发者工具做JavaScript性能分析用谷歌(Chrome)浏览器来当手机模拟器用谷歌(Chrome)浏览器来当手机模拟器查看html元素绑定的事件与方法的利器查看事件绑定chrome.exe" target="_blank" rel="external">https://developers.google.com/chrome-developer-tools/docs/mobile-emulationchrome移动版调试Android上的远程调试【译】Android上的远程调试用Chrome开发者工具做JavaScript性能分析用Chrome开发者工具做JavaScript性能分析用谷歌(Chrome)浏览器来当手机模拟器用谷歌(Chrome)浏览器来当手机模拟器查看html元素绑定的事件与方法的利器查看事件绑定chrome.exe</a> –user-agent=”Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1”<a href="http://jinlong.github.io/blog/2013/08/29/devtoolsecrets/综合浏览器开发工具关于FireBug和Chrome的控制台关于FireBug和Chrome的控制台使用Chrome" target="_blank" rel="external">http://jinlong.github.io/blog/2013/08/29/devtoolsecrets/综合浏览器开发工具关于FireBug和Chrome的控制台关于FireBug和Chrome的控制台使用Chrome</a> DevTools的Timeline和Profiles提高Web应用程序的性能提示信息 -  HTML5开发者社区chrome profilesChrome神器Vimium快捷键学习记录Chrome神器Vimium快捷键学习记录 Chrome 开发工具 Workspace 使用Chrome 开发工具 Workspace 使用 4. js参考手册：w3c手册5. 其它开发工具：新手推荐：editplus，vim团队开发：webstorm, phpstorm(phper), pycharm(pythoner), intellij idea(javaer).有道云笔记6. 模块化开发grunt新手上路 - Grunt 中文社区入门command line扩展工具gruntGrunt 中文社区前端项目构建工具—Grunt前端项目构建工具—GruntGrunt：任务自动管理工具 – JavaScript 标准参考教程（alpha）基于Node.js的自动化构建工具Grunt.js享受 Grunt - SegmentFault享受 Grunt【grunt整合版】30分钟学会使用grunt打包前端代码【grunt第一弹】30分钟学会使用grunt打包前端代码叶小钗 第一弹7. gulpjsgulp.js - the streaming build system官网Gulp.js：比 Grunt 更简单的自动化的项目构建利器教程gulp pluginsgulp pluginsgulpjs/gulp · GitHub前端构建工具gulp入门教程前端构建工具gulp入门教程Gulp —— 另一种自动化流水线 - 折腾喵的喵星杂记 - 知乎专栏Gulp 另一种自动化流水线三：jq工具1. oschina参考手册大全。2. w3c_all.chm，w3cschool离线版，包含了javascript,jquery,php,sql,html,css2.x,3.x的手册。前端开发qq群：159758989 ！在线图文地址：4. web前端开发分享-css,js工具篇</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/17/About-WebDeveloper/" data-id="cijijpa1v000e02v4qglq92up" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Install-ShadowSock-In-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/17/Install-ShadowSock-In-Ubuntu/" class="article-date">
+  <time datetime="2016-01-17T12:16:56.000Z" itemprop="datePublished">2016-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/17/Install-ShadowSock-In-Ubuntu/">Install ShadowSock In Ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/herzmut/shadowsocks" target="_blank" rel="external">https://github.com/herzmut/shadowsocks</a></p>
+<p>install server for ubuntu<br>(1) sudo apt-get install python-pip<br>python-pip(pip is a Python package installer)<br>(2) sudo pip install shadowsocks<br>sudo pip uninstall shadowsocks（for uninstall）<br>uninstall server for ubuntu<br>(1)sudo apt-get remove shadowsocks<br>(2)sudo apt-get autoremove<br>install client for ubuntu</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/17/Install-ShadowSock-In-Ubuntu/" data-id="cijijpa1j000302v4tfvv8ovv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Build-Wireless-Driver-Of-8192CU-In-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/" class="article-date">
+  <time datetime="2016-01-17T12:08:24.000Z" itemprop="datePublished">2016-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/">Build Wireless Driver Of 8192CU In Ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/" data-id="cijijpa1u000d02v40ethb3vg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-About-Socks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/17/About-Socks/" class="article-date">
+  <time datetime="2016-01-17T11:48:46.000Z" itemprop="datePublished">2016-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/17/About-Socks/">About Socks</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>wikipedia<a href="https://zh.wikipedia.org/wiki/SOCKS" target="_blank" rel="external">link</a></p>
+<h2 id="SOCKS_u534F_u8BAE_u6982_u8FF0"><a href="#SOCKS_u534F_u8BAE_u6982_u8FF0" class="headerlink" title="SOCKS协议概述"></a>SOCKS协议概述</h2><h3 id="281_29_u5F53_u9632_u706B_u5899_u540E_u7684_u5BA2_u6237_u7AEF_u8981_u8BBF_u95EE_u5916_u90E8_u7684_u670D_u52A1_u5668_u65F6_uFF0C_u5C31_u8DDFSOCKS_u4EE3_u7406_u670D_u52A1_u5668_u8FDE_u63A5_u3002_u8FD9_u4E2A_u4EE3_u7406_u670D_u52A1_u5668_u63A7_u5236_u5BA2_u6237_u7AEF_u8BBF_u95EE_u5916_u7F51_u7684_u8D44_u683C_uFF0C_u5141_u8BB8_u7684_u8BDD_uFF0C_u5C31_u5C06_u5BA2_u6237_u7AEF_u7684_u8BF7_u6C42_u53D1_u5F80_u5916_u90E8_u7684_u670D_u52A1_u5668_u3002_u7B80_u5355_u7684_u8BF4_u662F_u4E00_u79CD_u4EE3_u7406_u534F_u8BAE_u3002SOCKS_u662F_u4F1A_u8BDD_u5C42_u7684_u534F_u8BAE_uFF0C_u4F4D_u4E8E_u8868_u793A_u5C42_u4E0E_u4F20_u8F93_u5C42_u4E4B_u95F4_u3002_u8BE5_u534F_u8BAE_u6700_u521D_u7531David_Koblas_u5F00_u53D1_uFF0C_u800C_u540E_u7531NEC_u7684Ying-Da_Lee_u5C06_u5176_u6269_u5C55_u5230_u7248_u672C4_2C_u6700_u65B0_u534F_u8BAE_u662F_u7248_u672C5_uFF0C_u4E0E_u524D_u4E00_u7248_u672C_u76F8_u6BD4_uFF0C_u589E_u52A0_u652F_u6301UDP_u3001_u9A8C_u8BC1_uFF0C_u4EE5_u53CAIPv6_u3002"><a href="#281_29_u5F53_u9632_u706B_u5899_u540E_u7684_u5BA2_u6237_u7AEF_u8981_u8BBF_u95EE_u5916_u90E8_u7684_u670D_u52A1_u5668_u65F6_uFF0C_u5C31_u8DDFSOCKS_u4EE3_u7406_u670D_u52A1_u5668_u8FDE_u63A5_u3002_u8FD9_u4E2A_u4EE3_u7406_u670D_u52A1_u5668_u63A7_u5236_u5BA2_u6237_u7AEF_u8BBF_u95EE_u5916_u7F51_u7684_u8D44_u683C_uFF0C_u5141_u8BB8_u7684_u8BDD_uFF0C_u5C31_u5C06_u5BA2_u6237_u7AEF_u7684_u8BF7_u6C42_u53D1_u5F80_u5916_u90E8_u7684_u670D_u52A1_u5668_u3002_u7B80_u5355_u7684_u8BF4_u662F_u4E00_u79CD_u4EE3_u7406_u534F_u8BAE_u3002SOCKS_u662F_u4F1A_u8BDD_u5C42_u7684_u534F_u8BAE_uFF0C_u4F4D_u4E8E_u8868_u793A_u5C42_u4E0E_u4F20_u8F93_u5C42_u4E4B_u95F4_u3002_u8BE5_u534F_u8BAE_u6700_u521D_u7531David_Koblas_u5F00_u53D1_uFF0C_u800C_u540E_u7531NEC_u7684Ying-Da_Lee_u5C06_u5176_u6269_u5C55_u5230_u7248_u672C4_2C_u6700_u65B0_u534F_u8BAE_u662F_u7248_u672C5_uFF0C_u4E0E_u524D_u4E00_u7248_u672C_u76F8_u6BD4_uFF0C_u589E_u52A0_u652F_u6301UDP_u3001_u9A8C_u8BC1_uFF0C_u4EE5_u53CAIPv6_u3002" class="headerlink" title="(1)当防火墙后的客户端要访问外部的服务器时，就跟SOCKS代理服务器连接。这个代理服务器控制客户端访问外网的资格，允许的话，就将客户端的请求发往外部的服务器。简单的说是一种代理协议。SOCKS是会话层的协议，位于表示层与传输层之间。该协议最初由David Koblas开发，而后由NEC的Ying-Da Lee将其扩展到版本4,最新协议是版本5，与前一版本相比，增加支持UDP、验证，以及IPv6。"></a>(1)当防火墙后的客户端要访问外部的服务器时，就跟SOCKS代理服务器连接。这个代理服务器控制客户端访问外网的资格，允许的话，就将客户端的请求发往外部的服务器。简单的说是一种代理协议。SOCKS是会话层的协议，位于表示层与传输层之间。该协议最初由David Koblas开发，而后由NEC的Ying-Da Lee将其扩展到版本4,最新协议是版本5，与前一版本相比，增加支持UDP、验证，以及IPv6。</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/17/About-Socks/" data-id="cijijpa0t000002v4wp2jivqs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Install-Hexo-In-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/17/Install-Hexo-In-Ubuntu/" class="article-date">
+  <time datetime="2016-01-17T11:46:51.000Z" itemprop="datePublished">2016-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/17/Install-Hexo-In-Ubuntu/">Install Hexo In Ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Ubuntu下部署Hexo</p>
+<h3 id="uFF081_uFF09_u5B89_u88C5npm"><a href="#uFF081_uFF09_u5B89_u88C5npm" class="headerlink" title="（1）安装npm"></a>（1）安装npm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install npm</span><br></pre></td></tr></table></figure>
+<h3 id="uFF082_uFF09_u5B89_u88C5nodejs"><a href="#uFF082_uFF09_u5B89_u88C5nodejs" class="headerlink" title="（2）安装nodejs"></a>（2）安装nodejs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs -legacy </span><br><span class="line"><span class="comment">##安装同时创建链接或安装后手动创建</span></span><br><span class="line">&#123;</span><br><span class="line">sudo apt-get install nodejs </span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/bin/nodejs /usr/bin/node</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="uFF083_uFF09_u5B89_u88C5hexo"><a href="#uFF083_uFF09_u5B89_u88C5hexo" class="headerlink" title="（3）安装hexo"></a>（3）安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h3 id="uFF084_uFF09_u521B_u5EFAblog_u76EE_u5F55_uFF08_u8FDB_u5165_u5230_u6307_u5B9A_u76EE_u5F55_u521B_u5EFA_uFF09"><a href="#uFF084_uFF09_u521B_u5EFAblog_u76EE_u5F55_uFF08_u8FDB_u5165_u5230_u6307_u5B9A_u76EE_u5F55_u521B_u5EFA_uFF09" class="headerlink" title="（4）创建blog目录（进入到指定目录创建）"></a>（4）创建blog目录（进入到指定目录创建）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<h3 id="uFF085_uFF09_u5B89_u88C5_u4F9D_u8D56_u63D2_u4EF6"><a href="#uFF085_uFF09_u5B89_u88C5_u4F9D_u8D56_u63D2_u4EF6" class="headerlink" title="（5）安装依赖插件"></a>（5）安装依赖插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h3 id="uFF086_uFF09_u7F16_u8F91_u4F60_u7684blog"><a href="#uFF086_uFF09_u7F16_u8F91_u4F60_u7684blog" class="headerlink" title="（6）编辑你的blog"></a>（6）编辑你的blog</h3><p>（略）</p>
+<h3 id="uFF087_uFF09_u8F6C_u5316_u4E3A_u9759_u6001_u9875_u9762"><a href="#uFF087_uFF09_u8F6C_u5316_u4E3A_u9759_u6001_u9875_u9762" class="headerlink" title="（7）转化为静态页面"></a>（7）转化为静态页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="uFF088_uFF09_u542F_u52A8hexo_u670D_u52A1_u5668"><a href="#uFF088_uFF09_u542F_u52A8hexo_u670D_u52A1_u5668" class="headerlink" title="（8）启动hexo服务器"></a>（8）启动hexo服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="uFF089_uFF09_u67E5_u770Bblog_u6548_u679C_28_u672C_u5730_u67E5_u770B_29"><a href="#uFF089_uFF09_u67E5_u770Bblog_u6548_u679C_28_u672C_u5730_u67E5_u770B_29" class="headerlink" title="（9）查看blog效果(本地查看)"></a>（9）查看blog效果(本地查看)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:<span class="number">4000</span></span><br></pre></td></tr></table></figure>
+<h3 id="uFF0810_uFF09_u90E8_u7F72_u5230github"><a href="#uFF0810_uFF09_u90E8_u7F72_u5230github" class="headerlink" title="（10）部署到github"></a>（10）部署到github</h3><p>也可以部署到不同类型的服务器<br><a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">https://hexo.io/docs/deployment.html</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>编辑hexo下的_config.yml配置文件（注意空格）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/BrightWind/TestBlog.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: update blog</span><br></pre></td></tr></table></figure></p>
+<p>这里<a href="https://github.com/BrightWind/TestBlog.git" target="_blank" rel="external">https://github.com/BrightWind/TestBlog.git</a><br>实际上应该是你github主页地址，如<br><a href="https://github.com/BrightWind/BrightWind.github.io" target="_blank" rel="external">https://github.com/BrightWind/BrightWind.github.io</a></p>
+<h3 id="uFF0811_uFF09_u67E5_u770Bblog_u6548_u679C_28github_u67E5_u770B_29"><a href="#uFF0811_uFF09_u67E5_u770Bblog_u6548_u679C_28github_u67E5_u770B_29" class="headerlink" title="（11）查看blog效果(github查看)"></a>（11）查看blog效果(github查看)</h3><p><a href="https://brightwind.github.io/helloworld.html" target="_blank" rel="external">https://brightwind.github.io/helloworld.html</a></p>
+<h3 id="uFF0812_uFF09_u4E00_u4E9B_u57FA_u672C_u7684_u64CD_u4F5C_u547D_u4EE4"><a href="#uFF0812_uFF09_u4E00_u4E9B_u57FA_u672C_u7684_u64CD_u4F5C_u547D_u4EE4" class="headerlink" title="（12）一些基本的操作命令"></a>（12）一些基本的操作命令</h3><p>hexo g == hexo generate<br>hexo d == hexo deploy<br>hexo s == hexo server<br>hexo n == hexo new<br>从hexo server启动服务后，在helloworld页面可以查看详细用法<br>其他可参考以下博主文章<br><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">http://ibruce.info/2013/11/22/hexo-your-blog/</a><br><a href="http://www.tuicool.com/articles/YneiAzy" target="_blank" rel="external">http://www.tuicool.com/articles/YneiAzy</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/17/Install-Hexo-In-Ubuntu/" data-id="cijijpa1m000502v4lryv9x0d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-vim-command" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/17/vim-command/" class="article-date">
@@ -83,14 +380,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###search and replace<br>先按一下「Esc」→輸入「:1,$s/123/456/g」→再按「Enter」即可作搜尋並取代的動作!</p>
-<p>此範例是將文字123更換成文字456，並且將此文件裡的所有符合的皆取代。</p>
-<p>1,$ 指的就是從頭至尾。</p>
+        <h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>查找名brightwind的字符串，并将错误输出到null，即不输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name brightwind <span class="number">2</span>&gt;null</span><br></pre></td></tr></table></figure></p>
+<h2 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h2><p>查找git的安装位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis git</span><br></pre></td></tr></table></figure></p>
+<h2 id="search_and_replace"><a href="#search_and_replace" class="headerlink" title="search and replace"></a>search and replace</h2><p>此范例是將文字123更換成文字456，並且將此文件裡的所有符合的皆取代。1,$ 指的就是從頭至尾。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="variable">$s</span>/<span class="number">123</span>/<span class="number">456</span>/g</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/vim-command/" data-id="cijigptd70001e1v4qz4u38q2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/vim-command/" data-id="cijijpa1g000102v4kwcw2xlf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-Git-In-Ubuntu/" data-id="cijigptdb0003e1v4e0l0m2lk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-Git-In-Ubuntu/" data-id="cijijpa1n000602v43v8zzvs7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -202,11 +499,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>this blog writting entry<br><a href="http://isnowfy.github.io/simple" target="_blank" rel="external">http://isnowfy.github.io/simple</a></p>
+<p>markdown<br><a href="http://www.appinn.com/markdown/" target="_blank" rel="external">http://www.appinn.com/markdown/</a></p>
+<p>markdown sample(easy learn)<br><a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank" rel="external">https://en.wikipedia.org/wiki/Markdown#Example</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/HelloHexo/" data-id="cijigptce0000e1v4rdg2av5i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/HelloHexo/" data-id="cijijpa1r000b02v459g471k8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,51 +516,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/17/hello-world/" class="article-date">
-  <time datetime="2016-01-17T06:41:47.000Z" itemprop="datePublished">2016-01-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/hello-world/" data-id="cijigptd90002e1v4x5s1tpua" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </section>
         
@@ -297,7 +556,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">11</span></li></ul>
     </div>
   </div>
 
@@ -309,19 +568,23 @@
       <ul>
         
           <li>
-            <a href="/2016/01/17/vim-command/">vim command</a>
+            <a href="/2016/01/17/C-Develop-On-Ubuntu/">C++ Develop On Ubuntu</a>
           </li>
         
           <li>
-            <a href="/2016/01/17/Install-Git-In-Ubuntu/">Install Git In Ubuntu</a>
+            <a href="/2016/01/17/Install-Octopress-In-Ubuntu/">Install Octopress In Ubuntu</a>
           </li>
         
           <li>
-            <a href="/2016/01/17/HelloHexo/">HelloHexo</a>
+            <a href="/2016/01/17/About-WebDeveloper/">About WebDeveloper</a>
           </li>
         
           <li>
-            <a href="/2016/01/17/hello-world/">Hello World</a>
+            <a href="/2016/01/17/Install-ShadowSock-In-Ubuntu/">Install ShadowSock In Ubuntu</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/">Build Wireless Driver Of 8192CU In Ubuntu</a>
           </li>
         
       </ul>
