@@ -83,12 +83,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="this_blog_writting_entry"><a href="#this_blog_writting_entry" class="headerlink" title="this blog writting entry"></a>this blog writting entry</h2><p><a href="http://isnowfy.github.io/simple" target="_blank" rel="external">http://isnowfy.github.io/simple</a></p>
-<p>###(1)<br>iwconfig</p>
-<p>###(2)<br>iwconfig wlan0 mode monitor</p>
-<p>###(3)<br>iwconfig wlan0 channel 11</p>
-<p>###(4)<br>iwlist wlan0 channel</p>
-<p>CodeLite<br>Code::Blocks<br>clang+llvm<br>vim 用户：45%eclipse 用户：30%kscope/kate/kdevelop 用户：15%emacs 用户：5%  win虚拟机+source insight用户：5%</p>
+        <p>CodeLite<br>Code::Blocks<br>clang+llvm<br>vim 用户：45%eclipse 用户：30%kscope/kate/kdevelop 用户：15%emacs 用户：5%  win虚拟机+source insight用户：5%</p>
 <p>svn/hg/git</p>
 <p>著作权归作者所有。<br>商业转载请联系作者获得授权，非商业转载请注明出处。<br>作者：pansz<br>链接：<a href="https://www.zhihu.com/question/19848310/answer/15122904" target="_blank" rel="external">https://www.zhihu.com/question/19848310/answer/15122904</a><br>来源：知乎</p>
 <p>调试：从 Linus 大神开始，printf 就一直是调试利器，上面虽然没有一个人提到 printf 是调试利器，但没人敢不承认它。——关于这一点在现实中会存在许多变种，例如可以定制自己的宏实现分标志，分级别，重定向到 syslog，或者文件，远程 udp socket，等等。相关的工具打造好了之后，你获取信息会很精准而方便。我个人经常使用 udp socket 来接受日志输出。</p>
@@ -100,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/C-Develop-On-Ubuntu/" data-id="cijijpa1s000c02v4zb50uhvv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/C-Develop-On-Ubuntu/" data-id="cijillntc0004rtv4xsu5z7tx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-Octopress-In-Ubuntu/" data-id="cijijpa1k000402v4vf7lgk37" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-Octopress-In-Ubuntu/" data-id="cijillnta0002rtv42yvblfwm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -185,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/About-WebDeveloper/" data-id="cijijpa1v000e02v4qglq92up" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/About-WebDeveloper/" data-id="cijillntf0006rtv499qf67q0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,13 +212,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://github.com/herzmut/shadowsocks" target="_blank" rel="external">https://github.com/herzmut/shadowsocks</a></p>
-<p>install server for ubuntu<br>(1) sudo apt-get install python-pip<br>python-pip(pip is a Python package installer)<br>(2) sudo pip install shadowsocks<br>sudo pip uninstall shadowsocks（for uninstall）<br>uninstall server for ubuntu<br>(1)sudo apt-get remove shadowsocks<br>(2)sudo apt-get autoremove<br>install client for ubuntu</p>
+        <h2 id="python_client"><a href="#python_client" class="headerlink" title="python client"></a>python client</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-pip</span><br><span class="line">//sudo apt-get autoremove python-pip (remove software by apt)</span><br><span class="line">//python-pip(pip is a Python package installer)</span><br><span class="line"></span><br><span class="line">sudo pip install shadowsocks</span><br><span class="line">//sudo pip uninstall shadowsocks（remove package by pip）</span><br></pre></td></tr></table></figure>
+<h2 id="C_client_uFF08python_and_C_choose_one_uFF09"><a href="#C_client_uFF08python_and_C_choose_one_uFF09" class="headerlink" title="C client（python and C choose one）"></a>C client（python and C choose one）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget dl.chenyufei.info/shadowsocks/shadowsocks-local-linux64-<span class="number">1.1</span>.<span class="number">3</span>.gz</span><br><span class="line">//the address maybe change, go to dl.chenyufei.info/shadowsocks to check the right address <span class="keyword">if</span> you are failed to get</span><br><span class="line"></span><br><span class="line">gunzip shadowsocks-local-linux64-<span class="number">1.1</span>.<span class="number">3</span>.gz</span><br><span class="line"></span><br><span class="line">chmod a+x shadowsocks-local-linux64-<span class="number">1.1</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h2 id="start_shadowsock"><a href="#start_shadowsock" class="headerlink" title="start shadowsock"></a>start shadowsock</h2><p>file(shadowSocks.sh)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment">#文件名:shadowSocks.sh</span></span><br><span class="line">sslocal <span class="operator">-s</span> vip-hk01-<span class="number">3</span>.ssv7.net -p <span class="number">52545</span>  -k <span class="string">"***"</span> -t <span class="number">500</span> -m <span class="string">"aes-256-cfb"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#/home/brightwind/shadowsocks-local-linux64-1.1.4 -d=true -k="***" -m="aes-256-cfb" -l=1080 -p 52545 -s vip-hk01-3.ssv7.net</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="run_the_shell"><a href="#run_the_shell" class="headerlink" title="run the shell"></a>run the shell</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh shadowSocks.sh</span><br></pre></td></tr></table></figure>
+<h2 id="configure_chrome_for_shadowsock"><a href="#configure_chrome_for_shadowsock" class="headerlink" title="configure chrome for shadowsock"></a>configure chrome for shadowsock</h2><p>(1)download <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">SwitchyOmega.crx</a> plugin and add to chrome extention</p>
+<p>(2)Set Proxy as socks5<br><img src="/img/omegaswitch.png" alt=""></p>
+<p>OK, Go to Chrome to check if it work</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-ShadowSock-In-Ubuntu/" data-id="cijijpa1j000302v4tfvv8ovv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-ShadowSock-In-Ubuntu/" data-id="cijillnt80001rtv4dabj58pg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/" data-id="cijijpa1u000d02v40ethb3vg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/" data-id="cijillnte0005rtv454ckmre4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -296,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/About-Socks/" data-id="cijijpa0t000002v4wp2jivqs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/About-Socks/" data-id="cijillnsi0000rtv4r339n98r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-Hexo-In-Ubuntu/" data-id="cijijpa1m000502v4lryv9x0d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-Hexo-In-Ubuntu/" data-id="cijillntb0003rtv4d705hxrt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,11 +383,16 @@
         <h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>查找名brightwind的字符串，并将错误输出到null，即不输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name brightwind <span class="number">2</span>&gt;null</span><br></pre></td></tr></table></figure></p>
 <h2 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h2><p>查找git的安装位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis git</span><br></pre></td></tr></table></figure></p>
 <h2 id="search_and_replace"><a href="#search_and_replace" class="headerlink" title="search and replace"></a>search and replace</h2><p>此范例是將文字123更換成文字456，並且將此文件裡的所有符合的皆取代。1,$ 指的就是從頭至尾。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="variable">$s</span>/<span class="number">123</span>/<span class="number">456</span>/g</span><br></pre></td></tr></table></figure></p>
+<h2 id="u65E0_u7EBF_u7F51_u5361_u547D_u4EE4"><a href="#u65E0_u7EBF_u7F51_u5361_u547D_u4EE4" class="headerlink" title="无线网卡命令"></a>无线网卡命令</h2><p>```bash</p>
+<h3 id="//_u67E5_u770B_u65E0_u7EBF_u7F51_u5361_u914D_u7F6E"><a href="#//_u67E5_u770B_u65E0_u7EBF_u7F51_u5361_u914D_u7F6E" class="headerlink" title="//查看无线网卡配置"></a>//查看无线网卡配置</h3><p>iwconfig</p>
+<h3 id="//__u5C06_u65E0_u7EBF_u7F51_u5361_u914D_u7F6E_u4E3Amonitor_u6A21_u5F0F"><a href="#//__u5C06_u65E0_u7EBF_u7F51_u5361_u914D_u7F6E_u4E3Amonitor_u6A21_u5F0F" class="headerlink" title="// 将无线网卡配置为monitor模式"></a>// 将无线网卡配置为monitor模式</h3><p>iwconfig wlan0 mode monitor</p>
+<h3 id="//__u5C06_u65E0_u7EBF_u7F51_u5361_u8BBE_u7F6E_u4E3A_u94FE_u63A511_u53F7_u4FE1_u9053"><a href="#//__u5C06_u65E0_u7EBF_u7F51_u5361_u8BBE_u7F6E_u4E3A_u94FE_u63A511_u53F7_u4FE1_u9053" class="headerlink" title="// 将无线网卡设置为链接11号信道"></a>// 将无线网卡设置为链接11号信道</h3><p>iwconfig wlan0 channel 11</p>
+<h3 id="//__u5217_u51FA_u65E0_u7EBF_u7F51_u5361_u7684_u4FE1_u9053"><a href="#//__u5217_u51FA_u65E0_u7EBF_u7F51_u5361_u7684_u4FE1_u9053" class="headerlink" title="// 列出无线网卡的信道"></a>// 列出无线网卡的信道</h3><p>iwlist wlan0 channel</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/vim-command/" data-id="cijijpa1g000102v4kwcw2xlf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/vim-command/" data-id="cijightq80000d0v4dhend3ew" class="article-share-link">Share</a>
       
       
     </footer>
@@ -465,7 +470,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-Git-In-Ubuntu/" data-id="cijijpa1n000602v43v8zzvs7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-Git-In-Ubuntu/" data-id="cijib22oc0002egv4s9bj04ug" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -502,11 +507,12 @@
         <p>this blog writting entry<br><a href="http://isnowfy.github.io/simple" target="_blank" rel="external">http://isnowfy.github.io/simple</a></p>
 <p>markdown<br><a href="http://www.appinn.com/markdown/" target="_blank" rel="external">http://www.appinn.com/markdown/</a></p>
 <p>markdown sample(easy learn)<br><a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank" rel="external">https://en.wikipedia.org/wiki/Markdown#Example</a></p>
+<p>markdown basc<br><a href="http://rmarkdown.rstudio.com/authoring_basics.html" target="_blank" rel="external">http://rmarkdown.rstudio.com/authoring_basics.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/HelloHexo/" data-id="cijijpa1r000b02v459g471k8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/HelloHexo/" data-id="cijib22nj0000egv4547slfyl" class="article-share-link">Share</a>
       
       
     </footer>

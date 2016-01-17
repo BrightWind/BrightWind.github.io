@@ -5,19 +5,17 @@
   
   <title>Install ShadowSock In Ubuntu | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="https://github.com/herzmut/shadowsocks
-install server for ubuntu(1) sudo apt-get install python-pippython-pip(pip is a Python package installer)(2) sudo pip install shadowsockssudo pip uninstall shado">
+  <meta name="description" content="python client123456sudo apt-get install python-pip//sudo apt-get autoremove python-pip (remove software by apt)//python-pip(pip is a Python package installer)sudo pip install shadowsocks//sudo pip uni">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Install ShadowSock In Ubuntu">
 <meta property="og:url" content="http://yoursite.com/2016/01/17/Install-ShadowSock-In-Ubuntu/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="https://github.com/herzmut/shadowsocks
-install server for ubuntu(1) sudo apt-get install python-pippython-pip(pip is a Python package installer)(2) sudo pip install shadowsockssudo pip uninstall shado">
-<meta property="og:updated_time" content="2016-01-17T12:17:27.000Z">
+<meta property="og:description" content="python client123456sudo apt-get install python-pip//sudo apt-get autoremove python-pip (remove software by apt)//python-pip(pip is a Python package installer)sudo pip install shadowsocks//sudo pip uni">
+<meta property="og:image" content="http://yoursite.com/img/omegaswitch.png">
+<meta property="og:updated_time" content="2016-01-17T14:02:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install ShadowSock In Ubuntu">
-<meta name="twitter:description" content="https://github.com/herzmut/shadowsocks
-install server for ubuntu(1) sudo apt-get install python-pippython-pip(pip is a Python package installer)(2) sudo pip install shadowsockssudo pip uninstall shado">
+<meta name="twitter:description" content="python client123456sudo apt-get install python-pip//sudo apt-get autoremove python-pip (remove software by apt)//python-pip(pip is a Python package installer)sudo pip install shadowsocks//sudo pip uni">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -85,13 +83,18 @@ install server for ubuntu(1) sudo apt-get install python-pippython-pip(pip is a 
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://github.com/herzmut/shadowsocks" target="_blank" rel="external">https://github.com/herzmut/shadowsocks</a></p>
-<p>install server for ubuntu<br>(1) sudo apt-get install python-pip<br>python-pip(pip is a Python package installer)<br>(2) sudo pip install shadowsocks<br>sudo pip uninstall shadowsocks（for uninstall）<br>uninstall server for ubuntu<br>(1)sudo apt-get remove shadowsocks<br>(2)sudo apt-get autoremove<br>install client for ubuntu</p>
+        <h2 id="python_client"><a href="#python_client" class="headerlink" title="python client"></a>python client</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-pip</span><br><span class="line">//sudo apt-get autoremove python-pip (remove software by apt)</span><br><span class="line">//python-pip(pip is a Python package installer)</span><br><span class="line"></span><br><span class="line">sudo pip install shadowsocks</span><br><span class="line">//sudo pip uninstall shadowsocks（remove package by pip）</span><br></pre></td></tr></table></figure>
+<h2 id="C_client_uFF08python_and_C_choose_one_uFF09"><a href="#C_client_uFF08python_and_C_choose_one_uFF09" class="headerlink" title="C client（python and C choose one）"></a>C client（python and C choose one）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget dl.chenyufei.info/shadowsocks/shadowsocks-local-linux64-<span class="number">1.1</span>.<span class="number">3</span>.gz</span><br><span class="line">//the address maybe change, go to dl.chenyufei.info/shadowsocks to check the right address <span class="keyword">if</span> you are failed to get</span><br><span class="line"></span><br><span class="line">gunzip shadowsocks-local-linux64-<span class="number">1.1</span>.<span class="number">3</span>.gz</span><br><span class="line"></span><br><span class="line">chmod a+x shadowsocks-local-linux64-<span class="number">1.1</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h2 id="start_shadowsock"><a href="#start_shadowsock" class="headerlink" title="start shadowsock"></a>start shadowsock</h2><p>file(shadowSocks.sh)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment">#文件名:shadowSocks.sh</span></span><br><span class="line">sslocal <span class="operator">-s</span> vip-hk01-<span class="number">3</span>.ssv7.net -p <span class="number">52545</span>  -k <span class="string">"***"</span> -t <span class="number">500</span> -m <span class="string">"aes-256-cfb"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#/home/brightwind/shadowsocks-local-linux64-1.1.4 -d=true -k="***" -m="aes-256-cfb" -l=1080 -p 52545 -s vip-hk01-3.ssv7.net</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="run_the_shell"><a href="#run_the_shell" class="headerlink" title="run the shell"></a>run the shell</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh shadowSocks.sh</span><br></pre></td></tr></table></figure>
+<h2 id="configure_chrome_for_shadowsock"><a href="#configure_chrome_for_shadowsock" class="headerlink" title="configure chrome for shadowsock"></a>configure chrome for shadowsock</h2><p>(1)download <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">SwitchyOmega.crx</a> plugin and add to chrome extention</p>
+<p>(2)Set Proxy as socks5<br><img src="/img/omegaswitch.png" alt=""></p>
+<p>OK, Go to Chrome to check if it work</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-ShadowSock-In-Ubuntu/" data-id="cijijpa1j000302v4tfvv8ovv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-ShadowSock-In-Ubuntu/" data-id="cijillnt80001rtv4dabj58pg" class="article-share-link">Share</a>
       
       
     </footer>
