@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>About Socks | Hexo</title>
+  <title>Setup Emacs | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="wikipedia
-当防火墙后的客户端要访问外部的服务器时，就跟SOCKS代理服务器连接。这个代理服务器控制客户端访问外网的资格，允许的话，就将客户端的请求发往外部的服务器。简单的说是一种代理协议。SOCKS是会话层的协议，位于表示层与传输层之间。该协议最初由David Koblas开发，而后由NEC的Ying-Da Lee将其扩展到版本4,最新协议是版本5，与前一版本相比，增加支持UDP、验证，">
+  <meta name="description" content="https://github.com/alexott/emacs-configs
+load package manager@@;;; Emacs is not a package manager, and here we load its package manager!(require ‘package)(dolist (source ‘((“marmalade” . “http://marma">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About Socks">
-<meta property="og:url" content="http://yoursite.com/2016/01/17/Socks/index.html">
+<meta property="og:title" content="Setup Emacs">
+<meta property="og:url" content="http://yoursite.com/2016/01/18/Setup-Emacs/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="wikipedia
-当防火墙后的客户端要访问外部的服务器时，就跟SOCKS代理服务器连接。这个代理服务器控制客户端访问外网的资格，允许的话，就将客户端的请求发往外部的服务器。简单的说是一种代理协议。SOCKS是会话层的协议，位于表示层与传输层之间。该协议最初由David Koblas开发，而后由NEC的Ying-Da Lee将其扩展到版本4,最新协议是版本5，与前一版本相比，增加支持UDP、验证，">
-<meta property="og:updated_time" content="2016-01-17T15:08:49.000Z">
+<meta property="og:description" content="https://github.com/alexott/emacs-configs
+load package manager@@;;; Emacs is not a package manager, and here we load its package manager!(require ‘package)(dolist (source ‘((“marmalade” . “http://marma">
+<meta property="og:updated_time" content="2016-01-17T17:43:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About Socks">
-<meta name="twitter:description" content="wikipedia
-当防火墙后的客户端要访问外部的服务器时，就跟SOCKS代理服务器连接。这个代理服务器控制客户端访问外网的资格，允许的话，就将客户端的请求发往外部的服务器。简单的说是一种代理协议。SOCKS是会话层的协议，位于表示层与传输层之间。该协议最初由David Koblas开发，而后由NEC的Ying-Da Lee将其扩展到版本4,最新协议是版本5，与前一版本相比，增加支持UDP、验证，">
+<meta name="twitter:title" content="Setup Emacs">
+<meta name="twitter:description" content="https://github.com/alexott/emacs-configs
+load package manager@@;;; Emacs is not a package manager, and here we load its package manager!(require ‘package)(dolist (source ‘((“marmalade” . “http://marma">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Socks" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Setup-Emacs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/17/Socks/" class="article-date">
-  <time datetime="2016-01-17T11:48:46.000Z" itemprop="datePublished">2016-01-17</time>
+    <a href="/2016/01/18/Setup-Emacs/" class="article-date">
+  <time datetime="2016-01-17T16:28:56.000Z" itemprop="datePublished">2016-01-18</time>
 </a>
     
   </div>
@@ -77,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      About Socks
+      Setup Emacs
     </h1>
   
 
@@ -85,13 +85,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://zh.wikipedia.org/wiki/SOCKS" target="_blank" rel="external">wikipedia</a></p>
-<p>当防火墙后的客户端要访问外部的服务器时，就跟SOCKS代理服务器连接。这个代理服务器控制客户端访问外网的资格，允许的话，就将客户端的请求发往外部的服务器。简单的说是一种代理协议。SOCKS是会话层的协议，位于表示层与传输层之间。该协议最初由David Koblas开发，而后由NEC的Ying-Da Lee将其扩展到版本4,最新协议是版本5，与前一版本相比，增加支持UDP、验证，以及IPv6。</p>
+        <p><a href="https://github.com/alexott/emacs-configs" target="_blank" rel="external">https://github.com/alexott/emacs-configs</a></p>
+<h2 id="load_package_manager"><a href="#load_package_manager" class="headerlink" title="load package manager"></a><a href="https://truongtx.me/2013/01/07/emacs-package-manager/" target="_blank" rel="external">load package manager</a></h2><p>@@<br>;;; Emacs is not a package manager, and here we load its package manager!<br>(require ‘package)<br>(dolist (source ‘((“marmalade” . “<a href="http://marmalade-repo.org/packages/" target="_blank" rel="external">http://marmalade-repo.org/packages/</a>“)<br>                  (“elpa” . “<a href="http://tromey.com/elpa/" target="_blank" rel="external">http://tromey.com/elpa/</a>“)<br>                  ;; TODO: Maybe, use this after emacs24 is released<br>                  ;; (development versions of packages)<br>                  (“melpa” . “<a href="http://melpa.milkbox.net/packages/" target="_blank" rel="external">http://melpa.milkbox.net/packages/</a>“)<br>                  ))<br>  (add-to-list ‘package-archives source t))<br>(package-initialize)<br>@</p>
+<h2 id="Enable_C++_mode"><a href="#Enable_C++_mode" class="headerlink" title="Enable C++ mode"></a>Enable C++ mode</h2><p>@@<br>(require ‘cc-mode)<br>@</p>
+<h2 id="Setup_Code_Indent_28_u4EE3_u7801_u7F29_u8FDB_29"><a href="#Setup_Code_Indent_28_u4EE3_u7801_u7F29_u8FDB_29" class="headerlink" title="Setup Code Indent(代码缩进)"></a>Setup Code Indent(代码缩进)</h2><p>@@<br>(setq-default c-basic-offset 4 c-default-style “linux”)<br>(setq-default tab-width 4 indent-tabs-mode t)<br>(define-key c-mode-base-map (kbd “RET”) ‘newline-and-indent)<br>@</p>
+<h2 id="Setup_Autopair_28_u81EA_u52A8_u8865_u5BF9_29"><a href="#Setup_Autopair_28_u81EA_u52A8_u8865_u5BF9_29" class="headerlink" title="Setup Autopair(自动补对)"></a>Setup Autopair(自动补对)</h2><p>需要安装Autopair插件<br>@@<br>(require ‘autopair)<br>(autopair-global-mode 1)<br>(setq autopair-autowrap t)<br>@</p>
+<h2 id="ECB_u63D2_u4EF6-_u6587_u4EF6_u3001_u7C7B_u76EE_u5F55"><a href="#ECB_u63D2_u4EF6-_u6587_u4EF6_u3001_u7C7B_u76EE_u5F55" class="headerlink" title="ECB插件-文件、类目录"></a><a href="https://truongtx.me/2013/03/10/ecb-emacs-code-browser/" target="_blank" rel="external">ECB插件-文件、类目录</a></h2><p>;;; activate ecb<br>(require ‘ecb)<br>(require ‘ecb-autoloads)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Socks/" data-id="cijiu02r80004uyv4950ej45v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/18/Setup-Emacs/" data-id="cijiu02ra0005uyv40hjfmmds" class="article-share-link">Share</a>
       
       
     </footer>
@@ -100,19 +104,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Build Wireless Driver Of 8192CU In Ubuntu
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/17/Install-Hexo-In-Ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/17/C-Develop-On-Ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Install Hexo In Ubuntu</div>
+      <div class="article-nav-title">C++ Develop On Ubuntu</div>
     </a>
   
 </nav>

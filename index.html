@@ -61,6 +61,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Setup-Emacs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/18/Setup-Emacs/" class="article-date">
+  <time datetime="2016-01-17T16:28:56.000Z" itemprop="datePublished">2016-01-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/18/Setup-Emacs/">Setup Emacs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/alexott/emacs-configs" target="_blank" rel="external">https://github.com/alexott/emacs-configs</a></p>
+<h2 id="load_package_manager"><a href="#load_package_manager" class="headerlink" title="load package manager"></a><a href="https://truongtx.me/2013/01/07/emacs-package-manager/" target="_blank" rel="external">load package manager</a></h2><p>@@<br>;;; Emacs is not a package manager, and here we load its package manager!<br>(require ‘package)<br>(dolist (source ‘((“marmalade” . “<a href="http://marmalade-repo.org/packages/" target="_blank" rel="external">http://marmalade-repo.org/packages/</a>“)<br>                  (“elpa” . “<a href="http://tromey.com/elpa/" target="_blank" rel="external">http://tromey.com/elpa/</a>“)<br>                  ;; TODO: Maybe, use this after emacs24 is released<br>                  ;; (development versions of packages)<br>                  (“melpa” . “<a href="http://melpa.milkbox.net/packages/" target="_blank" rel="external">http://melpa.milkbox.net/packages/</a>“)<br>                  ))<br>  (add-to-list ‘package-archives source t))<br>(package-initialize)<br>@</p>
+<h2 id="Enable_C++_mode"><a href="#Enable_C++_mode" class="headerlink" title="Enable C++ mode"></a>Enable C++ mode</h2><p>@@<br>(require ‘cc-mode)<br>@</p>
+<h2 id="Setup_Code_Indent_28_u4EE3_u7801_u7F29_u8FDB_29"><a href="#Setup_Code_Indent_28_u4EE3_u7801_u7F29_u8FDB_29" class="headerlink" title="Setup Code Indent(代码缩进)"></a>Setup Code Indent(代码缩进)</h2><p>@@<br>(setq-default c-basic-offset 4 c-default-style “linux”)<br>(setq-default tab-width 4 indent-tabs-mode t)<br>(define-key c-mode-base-map (kbd “RET”) ‘newline-and-indent)<br>@</p>
+<h2 id="Setup_Autopair_28_u81EA_u52A8_u8865_u5BF9_29"><a href="#Setup_Autopair_28_u81EA_u52A8_u8865_u5BF9_29" class="headerlink" title="Setup Autopair(自动补对)"></a>Setup Autopair(自动补对)</h2><p>需要安装Autopair插件<br>@@<br>(require ‘autopair)<br>(autopair-global-mode 1)<br>(setq autopair-autowrap t)<br>@</p>
+<h2 id="ECB_u63D2_u4EF6-_u6587_u4EF6_u3001_u7C7B_u76EE_u5F55"><a href="#ECB_u63D2_u4EF6-_u6587_u4EF6_u3001_u7C7B_u76EE_u5F55" class="headerlink" title="ECB插件-文件、类目录"></a><a href="https://truongtx.me/2013/03/10/ecb-emacs-code-browser/" target="_blank" rel="external">ECB插件-文件、类目录</a></h2><p>;;; activate ecb<br>(require ‘ecb)<br>(require ‘ecb-autoloads)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/18/Setup-Emacs/" data-id="cijiu02ra0005uyv40hjfmmds" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-C-Develop-On-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/17/C-Develop-On-Ubuntu/" class="article-date">
@@ -95,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/C-Develop-On-Ubuntu/" data-id="cijioi44o000e7dv411mywqrq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/C-Develop-On-Ubuntu/" data-id="cijiu02rn000fuyv4delr12gt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-Octopress-In-Ubuntu/" data-id="cijioi44e00067dv4ayw09y03" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-Octopress-In-Ubuntu/" data-id="cijiu02rd0007uyv4akxkx5sp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/WebDeveloper/" data-id="cijioi44a00037dv4v2jsgvrj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/WebDeveloper/" data-id="cijiu02r70003uyv4t1z4gism" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-ShadowSock-In-Ubuntu/" data-id="cijioi44d00057dv4vj30ebk8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-ShadowSock-In-Ubuntu/" data-id="cijiu02rb0006uyv41v4132dv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/" data-id="cijioi43d00007dv4qiyd1z28" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/" data-id="cijiu02qq0000uyv41huv9g4i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -297,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Socks/" data-id="cijioi44b00047dv4gfxvrxec" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Socks/" data-id="cijiu02r80004uyv4950ej45v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -349,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-Hexo-In-Ubuntu/" data-id="cijioi44f00077dv4h679ky3h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-Hexo-In-Ubuntu/" data-id="cijiu02re0008uyv43akv1emr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -393,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/vim-command/" data-id="cijioi44600017dv4o5p5v3nh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/vim-command/" data-id="cijiu02r30001uyv4ezwwfoh0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -471,51 +513,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/Install-Git-In-Ubuntu/" data-id="cijioi44h00087dv4z6r1rz2n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/Install-Git-In-Ubuntu/" data-id="cijiu02rf0009uyv4tbp6pq6k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HelloHexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/17/HelloHexo/" class="article-date">
-  <time datetime="2016-01-17T06:53:35.000Z" itemprop="datePublished">2016-01-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/17/HelloHexo/">HelloHexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>this blog writting entry<br><a href="http://isnowfy.github.io/simple" target="_blank" rel="external">http://isnowfy.github.io/simple</a></p>
-<p>markdown<br><a href="http://www.appinn.com/markdown/" target="_blank" rel="external">http://www.appinn.com/markdown/</a></p>
-<p>markdown sample(easy learn)<br><a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank" rel="external">https://en.wikipedia.org/wiki/Markdown#Example</a></p>
-<p>markdown basc<br><a href="http://rmarkdown.rstudio.com/authoring_basics.html" target="_blank" rel="external">http://rmarkdown.rstudio.com/authoring_basics.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/HelloHexo/" data-id="cijioi44m000d7dv4ocui0m9l" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -563,7 +565,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">12</span></li></ul>
     </div>
   </div>
 
@@ -573,6 +575,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/01/18/Setup-Emacs/">Setup Emacs</a>
+          </li>
         
           <li>
             <a href="/2016/01/17/C-Develop-On-Ubuntu/">C++ Develop On Ubuntu</a>
@@ -588,10 +594,6 @@
         
           <li>
             <a href="/2016/01/17/Install-ShadowSock-In-Ubuntu/">Install ShadowSock In Ubuntu</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/17/Build-Wireless-Driver-Of-8192CU-In-Ubuntu/">Build Wireless Driver Of 8192CU In Ubuntu</a>
           </li>
         
       </ul>
