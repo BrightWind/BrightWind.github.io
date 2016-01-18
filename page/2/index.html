@@ -61,6 +61,86 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Install-Git-In-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/17/Install-Git-In-Ubuntu/" class="article-date">
+  <time datetime="2016-01-17T08:40:05.000Z" itemprop="datePublished">2016-01-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/17/Install-Git-In-Ubuntu/">Install Git In Ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Quit_Start"><a href="#Quit_Start" class="headerlink" title="Quit Start"></a>Quit Start</h2><p>reference to git tutorial series<br><a href="https://www.digitalocean.com/community/tutorials/how-to-use-git-effectively" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-use-git-effectively</a></p>
+<h3 id="281_29Install_Git"><a href="#281_29Install_Git" class="headerlink" title="(1)Install Git"></a>(1)Install Git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<p>intstall from source:<br><a href="https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04</a></p>
+<h3 id="282_29Setup_Git"><a href="#282_29Setup_Git" class="headerlink" title="(2)Setup Git"></a>(2)Setup Git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Your Name"</span></span><br><span class="line">git config --global user.email <span class="string">"youremail@domain.com"</span></span><br></pre></td></tr></table></figure>
+<p>查看git配置:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br><span class="line"></span><br><span class="line">user.name=Your Name</span><br><span class="line">user.email=youremail@domain.com</span><br></pre></td></tr></table></figure></p>
+<h3 id="283_29_Git_Usage"><a href="#283_29_Git_Usage" class="headerlink" title="(3) Git Usage"></a>(3) Git Usage</h3><p>Converting an existing project into a workspace environment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
+<p>pull project from remote repository<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span></span><br></pre></td></tr></table></figure></p>
+<p>add all files and directories to your newly created repository<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add.</span><br></pre></td></tr></table></figure></p>
+<p>create the message for our initial commit:<br>commit all add to the dash<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"Initial Commit"</span> <span class="operator">-a</span></span><br></pre></td></tr></table></figure></p>
+<p>commit some file<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"Initial Commit"</span> file</span><br></pre></td></tr></table></figure></p>
+<p>adds a remote, called “origin”,the name can be any you like<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin ssh://git@git.domain.tld/repository.git</span><br></pre></td></tr></table></figure></p>
+<p>view<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></p>
+<p>Once you have a remote configured, you are now able to push your code.<br>You can push code to a remote server by typing the following:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<p>“git push” tells git that we want to push our changes, “origin” is the name of our newly-configured remote server and “master” is the name of the first branch.</p>
+<p>By default, the first branch is called “master”.<br>Viewing branches<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="operator">-a</span></span><br></pre></td></tr></table></figure></p>
+<p>The output will look similiar to the following:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* master</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+<p>The asterisk next to “master” in the first line of the output indicates that we are currently on that branch. The second line simply indicates that on our remote, named origin, there is a single branch, also called master.</p>
+<p>Creating branches<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b develop</span><br></pre></td></tr></table></figure></p>
+<p>the output would be as follows:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Switched to a new branch <span class="string">'develop'</span></span><br></pre></td></tr></table></figure></p>
+<p>You can switch back and forth between your two branches, by using the git checkout command:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure></p>
+<p>or<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop</span><br></pre></td></tr></table></figure></p>
+<p>Assuming the branch that you are trying to switch to exists, you’ll see output similiar to the following:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Switched to branch <span class="string">'master'</span></span><br></pre></td></tr></table></figure></p>
+<p>If you try to switch to a branch that doesn’t exist, such as<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout nosuchbranch</span><br></pre></td></tr></table></figure></p>
+<p>Git will tell you:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: pathspec <span class="string">'nosuchbranch'</span> did not match any file(s) known to git.</span><br></pre></td></tr></table></figure></p>
+<p>Making changes to our develop branch<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">touch develop				//create a empty file</span><br><span class="line">git add develop 			//add to dash</span><br><span class="line">git commit -m <span class="string">"develop file"</span> develop 	//commit to develop</span><br><span class="line">git branch				//confirm that we are currently on develop branch</span><br></pre></td></tr></table></figure></p>
+<p>output<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* develop			//current branch</span><br><span class="line">  master</span><br></pre></td></tr></table></figure></p>
+<p>Running the “ls” command will show us that the two files exist:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure></p>
+<p>The output will show us that both of our files, respectively named “file” and “develop”, are found:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">develop file</span><br></pre></td></tr></table></figure></p>
+<p>Merging code between branches<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure></p>
+<p>To ensure that we are on the master branch, we can run type the following:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure></p>
+<p>The output will tell us which branch we are one, indicated by the asterisk.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  develop </span><br><span class="line">* master</span><br></pre></td></tr></table></figure></p>
+<p>Running “ls” again, it appears that our new file is missing.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file</span><br></pre></td></tr></table></figure></p>
+<p>It’s not missing - it’s on our develop branch and we are on our master branch.<br>It is important to remember when merging, that we want to be on the branch that we want to merge to.One of the options that we can pass to the merge command, namely “–no-ff”, means we want git to retain all of the commit messages prior to the merge. This will make tracking changes easier in the future.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge develop --no-ff</span><br></pre></td></tr></table></figure></p>
+<p>output:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Merge made by the <span class="string">'recursive'</span> strategy.</span><br><span class="line"> <span class="number">0</span> files changed</span><br><span class="line"> create mode <span class="number">100644</span> develop</span><br></pre></td></tr></table></figure></p>
+<p>view file again<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure></p>
+<p>output:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">develop file</span><br></pre></td></tr></table></figure></p>
+<p>push file to remote<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/17/Install-Git-In-Ubuntu/" data-id="cijk6lm8i000axrv4hf75yptq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-HelloHexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/17/HelloHexo/" class="article-date">
@@ -91,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/HelloHexo/" data-id="cijiu02rm000euyv4v9zn98br" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/HelloHexo/" data-id="cijk6lm8q000fxrv419xzt5cb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/hello-world/" data-id="cijiu02r50002uyv4uiaj9szb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/17/hello-world/" data-id="cijk6lm850002xrv4ha6h3ff0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -186,7 +266,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">12</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
@@ -196,6 +276,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/01/18/Install-MySql-In-Ubuntu/">Install MySql InU buntu</a>
+          </li>
         
           <li>
             <a href="/2016/01/18/Setup-Emacs/">Setup Emacs</a>
@@ -211,10 +295,6 @@
         
           <li>
             <a href="/2016/01/17/WebDeveloper/">About WebDeveloper</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/17/Install-ShadowSock-In-Ubuntu/">Install ShadowSock In Ubuntu</a>
           </li>
         
       </ul>
