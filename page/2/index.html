@@ -61,6 +61,128 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Git-Remote" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/06/Git-Remote/" class="article-date">
+  <time datetime="2016-02-05T17:31:35.000Z" itemprop="datePublished">2016-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/06/Git-Remote/">Git Remote</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="u67E5_u770B_u5F53_u524D_u914D_u7F6E_u7684_u8FDC_u7A0B_u4E3B_u673A_u540D"><a href="#u67E5_u770B_u5F53_u524D_u914D_u7F6E_u7684_u8FDC_u7A0B_u4E3B_u673A_u540D" class="headerlink" title="查看当前配置的远程主机名"></a>查看当前配置的远程主机名</h3><p>$ git remote<br>origin</p>
+<h3 id="u67E5_u770B_u8FDC_u7A0B_u4E3B_u673A_u7684_u7F51_u5740"><a href="#u67E5_u770B_u8FDC_u7A0B_u4E3B_u673A_u7684_u7F51_u5740" class="headerlink" title="查看远程主机的网址"></a>查看远程主机的网址</h3><p>$ git remote -v<br>origin  git@github.com:jquery/jquery.git (fetch)<br>origin  git@github.com:jquery/jquery.git (push)</p>
+<h3 id="u53EF_u4EE5_u67E5_u770B_u8BE5_u4E3B_u673A_u7684_u8BE6_u7EC6_u4FE1_u606F"><a href="#u53EF_u4EE5_u67E5_u770B_u8BE5_u4E3B_u673A_u7684_u8BE6_u7EC6_u4FE1_u606F" class="headerlink" title="可以查看该主机的详细信息"></a>可以查看该主机的详细信息</h3><p>$ git remote show &lt;主机名&gt;</p>
+<h3 id="u6DFB_u52A0_u8FDC_u7A0B_u4E3B_u673A"><a href="#u6DFB_u52A0_u8FDC_u7A0B_u4E3B_u673A" class="headerlink" title="添加远程主机"></a>添加远程主机</h3><p>$ git remote add &lt;主机名&gt; &lt;网址&gt;</p>
+<h3 id="u5220_u9664_u8FDC_u7A0B_u4E3B_u673A"><a href="#u5220_u9664_u8FDC_u7A0B_u4E3B_u673A" class="headerlink" title="删除远程主机"></a>删除远程主机</h3><p>$ git remote rm &lt;主机名&gt;</p>
+<h3 id="u8FDC_u7A0B_u4E3B_u673A_u7684_u6539_u540D"><a href="#u8FDC_u7A0B_u4E3B_u673A_u7684_u6539_u540D" class="headerlink" title="远程主机的改名"></a>远程主机的改名</h3><p>$ git remote rename &lt;原主机名&gt; &lt;新主机名&gt;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/06/Git-Remote/" data-id="cikwqjhkm001n49v4orgfpljm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Git-Clone" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/06/Git-Clone/" class="article-date">
+  <time datetime="2016-02-05T17:14:00.000Z" itemprop="datePublished">2016-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/06/Git-Clone/">Git Clone</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>$ git clone &lt;版本库的网址&gt;<br>$ git clone &lt;版本库的网址&gt; &lt;本地目录名&gt;<br>git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下<br>面是一些例子。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> http[s]://example.com/path/to/repo.git/</span><br><span class="line">$ git <span class="built_in">clone</span> ssh://example.com/path/to/repo.git/</span><br><span class="line">$ git <span class="built_in">clone</span> git://example.com/path/to/repo.git/</span><br><span class="line">$ git <span class="built_in">clone</span> /opt/git/project.git </span><br><span class="line">$ git <span class="built_in">clone</span> file:///opt/git/project.git</span><br><span class="line">$ git <span class="built_in">clone</span> ftp[s]://example.com/path/to/repo.git/</span><br><span class="line">$ git <span class="built_in">clone</span> rsync://example.com/path/to/repo.git/</span><br><span class="line"></span><br><span class="line"><span class="comment"># SSH协议还有另一种写法。</span></span><br><span class="line">$ git <span class="built_in">clone</span> [user@]example.com:path/to/repo.git/</span><br><span class="line">git <span class="built_in">clone</span> git@github.com:BrightWind/BrightWind.github.io.git</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># -o 指定导出的远程主机名(默认主机名为orgin)</span></span><br><span class="line">$ git <span class="built_in">clone</span> -o jQuery https://github.com/jquery/jquery.git</span><br><span class="line">$ git remote</span><br><span class="line"></span><br><span class="line">jQuery</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/06/Git-Clone/" data-id="cikwqjhkq001r49v461bbpzcr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Repair-Grub-File" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/23/Repair-Grub-File/" class="article-date">
+  <time datetime="2016-01-23T14:08:27.000Z" itemprop="datePublished">2016-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/23/Repair-Grub-File/">Repair Grub File</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>(1) run update-grub to file boot image<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">brightwind@brightwind:~/.ssh/blog$ sudo update-grub</span><br><span class="line">Generating grub configuration file ...</span><br><span class="line">Warning: Setting GRUB_TIMEOUT to a non-zero value when GRUB_HIDDEN_TIMEOUT is <span class="built_in">set</span> is no longer supported.</span><br><span class="line">Found linux image: /boot/vmlinuz-<span class="number">3.19</span>.<span class="number">0</span>-<span class="number">25</span>-generic</span><br><span class="line">Found initrd image: /boot/initrd.img-<span class="number">3.19</span>.<span class="number">0</span>-<span class="number">25</span>-generic</span><br><span class="line">Found memtest86+ image: /boot/memtest86+.elf</span><br><span class="line">Found memtest86+ image: /boot/memtest86+.bin</span><br><span class="line">Found Windows <span class="number">7</span> (loader) on /dev/sda1</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/23/Repair-Grub-File/" data-id="cikwqjhjy000t49v45dc9t49o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-OS/">Linux OS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-AngularJS-Study-Note-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/21/AngularJS-Study-Note-1/" class="article-date">
@@ -112,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/21/AngularJS-Study-Note-1/" data-id="cikwpzmhe0000x1v4cnhp7zep" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/21/AngularJS-Study-Note-1/" data-id="cikwqjhj1000049v446lpsbhy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
@@ -163,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/21/AngularJS-Study-Note2/" data-id="cikwpzmjn001ux1v4m41sggwi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/21/AngularJS-Study-Note2/" data-id="cikwqjhkz002249v4i0nyn2i7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
@@ -228,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/21/Normal-Git-Command/" data-id="cikwpzmik000sx1v4zt5f6wdp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/21/Normal-Git-Command/" data-id="cikwqjhk2000x49v4p80x65yn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -274,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/20/AngularJS-Study-Note/" data-id="cikwpzmjo001wx1v454gha5do" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/20/AngularJS-Study-Note/" data-id="cikwqjhl1002449v4ircyqs03" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
@@ -313,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/19/Normal-Tool/" data-id="cikwpzmii000qx1v45436t65e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/19/Normal-Tool/" data-id="cikwqjhk0000v49v4e7t593db" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-OS/">Linux OS</a></li></ul>
@@ -356,7 +478,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/19/Install-Terminator/" data-id="cikwpzmim000vx1v4uxbi7j07" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/19/Install-Terminator/" data-id="cikwqjhk3001049v4fokguvf9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-OS/">Linux OS</a></li></ul>
@@ -396,7 +518,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/19/Install-Subversion-In-Ubuntu/" data-id="cikwpzmio000xx1v4drc5rs55" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/19/Install-Subversion-In-Ubuntu/" data-id="cikwqjhk5001249v45j6m684o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Develop/">Develop</a></li></ul>
@@ -408,151 +530,9 @@
 
 
   
-    <article id="post-Install-MySql-In-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/18/Install-MySql-In-Ubuntu/" class="article-date">
-  <time datetime="2016-01-18T15:26:30.000Z" itemprop="datePublished">2016-01-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/18/Install-MySql-In-Ubuntu/">Install MySql InU buntu</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-ubuntu-14-04" target="_blank" rel="external">reference</a></p>
-<h2 id="281_29check_your_hostname_3A"><a href="#281_29check_your_hostname_3A" class="headerlink" title="(1)check your hostname:"></a>(1)check your hostname:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostname</span><br><span class="line">hostname <span class="operator">-f</span></span><br></pre></td></tr></table></figure>
-<h2 id="282_29install_mysql_server"><a href="#282_29install_mysql_server" class="headerlink" title="(2)install mysql server"></a>(2)install mysql server</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
-<h2 id="283_29setup_the_password_of_root_28like__u201C123456_u201D_29"><a href="#283_29setup_the_password_of_root_28like__u201C123456_u201D_29" class="headerlink" title="(3)setup the password of root(like “123456”)"></a>(3)setup the password of root(like “123456”)</h2><p><img src="/img/setup_mysql.png" alt=""></p>
-<h2 id="284_29address_several_security_concerns"><a href="#284_29address_several_security_concerns" class="headerlink" title="(4)address several security concerns"></a>(4)address several security concerns</h2><p>[[config for remote access]](<a href="https://www.linode.com/docs/databases/mysql/securely-administer-mysql-with-an-ssh-tunnel）" target="_blank" rel="external">https://www.linode.com/docs/databases/mysql/securely-administer-mysql-with-an-ssh-tunnel）</a></p>
-<p>You will be given the choice to change the MySQL root password, remove anonymous user accounts, disable root logins outside of localhost, and remove test databases. You can read more about the script in in the <a href="https://dev.mysql.com/doc/refman/5.5/en/mysql-secure-installation.html" target="_blank" rel="external">MySQL Reference Manual</a>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql_secure_installation</span><br></pre></td></tr></table></figure>
-<p><img src="/img/secre_mysql.png" alt=""></p>
-<h2 id="285_29Root_Login"><a href="#285_29Root_Login" class="headerlink" title="(5)Root Login"></a>(5)Root Login</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line"></span><br><span class="line">List of all MySQL commands:</span><br><span class="line">Note that all text commands must be first on line and end with <span class="string">';'</span></span><br><span class="line">?         (\?) Synonym <span class="keyword">for</span> `<span class="built_in">help</span><span class="string">'.</span><br><span class="line">clear     (\c) Clear command.</span><br><span class="line">connect   (\r) Reconnect to the server. Optional arguments are db and host.</span><br><span class="line">delimiter (\d) Set statement delimiter. NOTE: Takes the rest of the line as new delimiter.</span><br><span class="line">edit      (\e) Edit command with $EDITOR.</span><br><span class="line">ego       (\G) Send command to mysql server, display result vertically.</span><br><span class="line">exit      (\q) Exit mysql. Same as quit.</span><br><span class="line">go        (\g) Send command to mysql server.</span><br><span class="line">help      (\h) Display this help.</span><br><span class="line">nopager   (\n) Disable pager, print to stdout.</span><br><span class="line">notee     (\t) Don'</span>t write into outfile.</span><br><span class="line">pager     (\P) Set PAGER [to_pager]. Print the query results via PAGER.</span><br><span class="line"><span class="built_in">print</span>     (\p) Print current command.</span><br><span class="line">prompt    (\R) Change your mysql prompt.</span><br><span class="line">quit      (\q) Quit mysql.</span><br><span class="line"><span class="built_in">rehash</span>    (\<span class="comment">#) Rebuild completion hash.</span></span><br><span class="line"><span class="built_in">source</span>    (\.) Execute an SQL script file. Takes a file name as an argument.</span><br><span class="line">status    (\s) Get status information from the server.</span><br><span class="line">system    (\!) Execute a system shell command.</span><br><span class="line">tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.</span><br><span class="line">use       (\u) Use another database. Takes database name as argument.</span><br><span class="line">charset   (\C) Switch to another charset. Might be needed <span class="keyword">for</span> processing binlog with multi-byte charsets.</span><br><span class="line">warnings  (\W) Show warnings after every statement.</span><br><span class="line">nowarning (\w) Don<span class="string">'t show warnings after every statement.</span></span><br></pre></td></tr></table></figure>
-<h2 id="286_29Create_a_New_MySQL_User_and_Database"><a href="#286_29Create_a_New_MySQL_User_and_Database" class="headerlink" title="(6)Create a New MySQL User and Database"></a>(6)Create a New MySQL User and Database</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//create database</span><br><span class="line">create database testdb;</span><br><span class="line"></span><br><span class="line">//dispatch object right</span><br><span class="line">grant all on testdb.* to <span class="string">'testuser'</span> identified by <span class="string">'password'</span>;</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line">create user <span class="string">'testuser'</span>@<span class="string">'localhost'</span> identified by <span class="string">'password'</span>;</span><br><span class="line">grant all on testdb.* to <span class="string">'testuser'</span>;</span><br><span class="line"></span><br><span class="line">//operate db</span><br><span class="line">use testdb;</span><br><span class="line"></span><br><span class="line">//create table</span><br><span class="line">create table customers (customer_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, first_name TEXT, last_name TEXT);</span><br><span class="line"></span><br><span class="line">//and <span class="built_in">command</span> like:</span><br><span class="line">show databases;</span><br><span class="line"></span><br><span class="line">use database_1;</span><br><span class="line"></span><br><span class="line">show tables;</span><br><span class="line"></span><br><span class="line">desc table_1;</span><br><span class="line"></span><br><span class="line">//<span class="built_in">exit</span> database</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<h2 id="287_29service_control"><a href="#287_29service_control" class="headerlink" title="(7)service control"></a>(7)service control</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql start/stop/restart</span><br></pre></td></tr></table></figure>
-<h2 id="288_29Reset_the_MySQL_Root_Password"><a href="#288_29Reset_the_MySQL_Root_Password" class="headerlink" title="(8)Reset the MySQL Root Password"></a>(8)Reset the MySQL Root Password</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql stop</span><br><span class="line"></span><br><span class="line">//re-run config</span><br><span class="line">sudo dpkg-reconfigure mysql-server-<span class="number">5.5</span></span><br><span class="line"></span><br><span class="line">sudo service mysql start</span><br></pre></td></tr></table></figure>
-<h2 id="289_29_optimize_a_MySQL_server"><a href="#289_29_optimize_a_MySQL_server" class="headerlink" title="(9) optimize a MySQL server"></a>(9) optimize a MySQL server</h2><p>MySQL Tuner is a Perl script that connects to a running instance of MySQL and provides configuration recommendations based on workload. Ideally, the MySQL instance should have been operating for at least 24 hours before running the tuner. The longer the instance has been running, the better advice MySQL Tuner will give.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysqltuner</span><br><span class="line"></span><br><span class="line">mysqltuner</span><br></pre></td></tr></table></figure></p>
-<p>The output will show two areas of interest: General recommendations and Variables to adjust.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/18/Install-MySql-In-Ubuntu/" data-id="cikwpzmiu0014x1v45x7bgglv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DataBase/">DataBase</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Setup-Emacs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/18/Setup-Emacs/" class="article-date">
-  <time datetime="2016-01-17T16:28:56.000Z" itemprop="datePublished">2016-01-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/18/Setup-Emacs/">Setup Emacs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://github.com/alexott/emacs-configs" target="_blank" rel="external">https://github.com/alexott/emacs-configs</a></p>
-<h2 id="load_package_manager"><a href="#load_package_manager" class="headerlink" title="load package manager"></a><a href="https://truongtx.me/2013/01/07/emacs-package-manager/" target="_blank" rel="external">load package manager</a></h2><p>@@<br>;;; Emacs is not a package manager, and here we load its package manager!<br>(require ‘package)<br>(dolist (source ‘((“marmalade” . “<a href="http://marmalade-repo.org/packages/" target="_blank" rel="external">http://marmalade-repo.org/packages/</a>“)<br>                  (“elpa” . “<a href="http://tromey.com/elpa/" target="_blank" rel="external">http://tromey.com/elpa/</a>“)<br>                  ;; TODO: Maybe, use this after emacs24 is released<br>                  ;; (development versions of packages)<br>                  (“melpa” . “<a href="http://melpa.milkbox.net/packages/" target="_blank" rel="external">http://melpa.milkbox.net/packages/</a>“)<br>                  ))<br>  (add-to-list ‘package-archives source t))<br>(package-initialize)<br>@</p>
-<h2 id="Enable_C++_mode"><a href="#Enable_C++_mode" class="headerlink" title="Enable C++ mode"></a>Enable C++ mode</h2><p>@@<br>(require ‘cc-mode)<br>@</p>
-<h2 id="Setup_Code_Indent_28_u4EE3_u7801_u7F29_u8FDB_29"><a href="#Setup_Code_Indent_28_u4EE3_u7801_u7F29_u8FDB_29" class="headerlink" title="Setup Code Indent(代码缩进)"></a>Setup Code Indent(代码缩进)</h2><p>@@<br>(setq-default c-basic-offset 4 c-default-style “linux”)<br>(setq-default tab-width 4 indent-tabs-mode t)<br>(define-key c-mode-base-map (kbd “RET”) ‘newline-and-indent)<br>@</p>
-<h2 id="Setup_Autopair_28_u81EA_u52A8_u8865_u5BF9_29"><a href="#Setup_Autopair_28_u81EA_u52A8_u8865_u5BF9_29" class="headerlink" title="Setup Autopair(自动补对)"></a>Setup Autopair(自动补对)</h2><p>需要安装Autopair插件<br>@@<br>(require ‘autopair)<br>(autopair-global-mode 1)<br>(setq autopair-autowrap t)<br>@</p>
-<h2 id="ECB_u63D2_u4EF6-_u6587_u4EF6_u3001_u7C7B_u76EE_u5F55"><a href="#ECB_u63D2_u4EF6-_u6587_u4EF6_u3001_u7C7B_u76EE_u5F55" class="headerlink" title="ECB插件-文件、类目录"></a><a href="https://truongtx.me/2013/03/10/ecb-emacs-code-browser/" target="_blank" rel="external">ECB插件-文件、类目录</a></h2><p>;;; activate ecb<br>(require ‘ecb)<br>(require ‘ecb-autoloads)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/18/Setup-Emacs/" data-id="cikwpzmie000mx1v43hbgdiip" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-OS/">Linux OS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-C-Develop-On-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/17/C-Develop-On-Ubuntu/" class="article-date">
-  <time datetime="2016-01-17T12:25:13.000Z" itemprop="datePublished">2016-01-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/17/C-Develop-On-Ubuntu/">C++ Develop On Ubuntu</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>CodeLite<br>Code::Blocks<br>clang+llvm<br>vim 用户：45%eclipse 用户：30%kscope/kate/kdevelop 用户：15%emacs 用户：5%  win虚拟机+source insight用户：5%</p>
-<p>svn/hg/git</p>
-<p>著作权归作者所有。<br>商业转载请联系作者获得授权，非商业转载请注明出处。<br>作者：pansz<br>链接：<a href="https://www.zhihu.com/question/19848310/answer/15122904" target="_blank" rel="external">https://www.zhihu.com/question/19848310/answer/15122904</a><br>来源：知乎</p>
-<p>调试：从 Linus 大神开始，printf 就一直是调试利器，上面虽然没有一个人提到 printf 是调试利器，但没人敢不承认它。——关于这一点在现实中会存在许多变种，例如可以定制自己的宏实现分标志，分级别，重定向到 syslog，或者文件，远程 udp socket，等等。相关的工具打造好了之后，你获取信息会很精准而方便。我个人经常使用 udp socket 来接受日志输出。</p>
-<p>valgrind 内存泄露检查<br>doxygen 文档组织工具</p>
-<p>编辑：vim构建：基于scons构造了一套整合thrift、gcc、cpplint的编译环境自动构建：Jenkins（hudson）调试：线上google-breakpad，线下gdb。开源chromium里的logging模块valgrind版本控制：svn、git单测：googletest</p>
-<p>Coding Style : cpplint.py <a href="http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.pyStyle" target="_blank" rel="external">http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.pyStyle</a> formater : astyle <a href="http://astyle.sourceforge.net/astyle.html" target="_blank" rel="external">http://astyle.sourceforge.net/astyle.html</a><br>Test Framework : DejaGnu</p>
-<p>LLVM 编译器后台，能够做编译期间优化、链接优化，代码生成等<br>CLANG是APPLE开发的配合LLVM一起使用的编译器（LLVM与GCC难以配合及BSD开源问题）<br><a href="https://linuxtoy.org/archives/llvm-and-clang.html" target="_blank" rel="external">https://linuxtoy.org/archives/llvm-and-clang.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/17/C-Develop-On-Ubuntu/" data-id="cikwpzmji001px1v41ka6cg6k" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C、C/">C、C++</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -565,7 +545,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -574,7 +554,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 17.5px;">Git</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12.5px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/spring/" style="font-size: 12.5px;">spring</a>
+      <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 17.5px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12.5px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a>
     </div>
   </div>
 
@@ -583,7 +563,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -595,23 +575,23 @@
       <ul>
         
           <li>
+            <a href="/2016/02/21/add-maven-repository/">add maven repository</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/21/spring-Q-A/">spring Q&amp;A</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/21/Idea-Intellj-Q-A/">Idea Intellj Q&amp;A</a>
+          </li>
+        
+          <li>
             <a href="/2016/02/21/create-maven-spring-mvc-from-archetypes/">create maven-spring-mvc from archetypes</a>
           </li>
         
           <li>
             <a href="/2016/02/21/create-maven-spring-mvc-manully/">create maven-spring-mvc manully</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/16/install-jdk/">install-jdk</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/06/Git-Reset/">Git Reset</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/06/Git-Checkout/">Git Checkout</a>
           </li>
         
       </ul>
