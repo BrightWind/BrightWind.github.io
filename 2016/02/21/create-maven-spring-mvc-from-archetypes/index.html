@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>create maven-spring-mvc from archetypes | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 [安装模板仓库到本地仓库]git clone https://github.com/kolorobot/spring-mvc-quickstart-archetype.gitcd spring-mvc-quickstart-archetypemvn clean install
+2 创建项目（1）使用命令从仓库模板创建项目mvn archetype:generate \        -Darc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="create maven-spring-mvc from archetypes">
+<meta property="og:url" content="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 [安装模板仓库到本地仓库]git clone https://github.com/kolorobot/spring-mvc-quickstart-archetype.gitcd spring-mvc-quickstart-archetypemvn clean install
+2 创建项目（1）使用命令从仓库模板创建项目mvn archetype:generate \        -Darc">
+<meta property="og:updated_time" content="2016-02-21T15:38:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="create maven-spring-mvc from archetypes">
+<meta name="twitter:description" content="1 [安装模板仓库到本地仓库]git clone https://github.com/kolorobot/spring-mvc-quickstart-archetype.gitcd spring-mvc-quickstart-archetypemvn clean install
+2 创建项目（1）使用命令从仓库模板创建项目mvn archetype:generate \        -Darc">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-create-maven-spring-mvc-from-archetypes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/21/create-maven-spring-mvc-from-archetypes/" class="article-date">
+  <time datetime="2016-02-21T15:36:15.000Z" itemprop="datePublished">2016-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      create maven-spring-mvc from archetypes
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1__5B_u5B89_u88C5_u6A21_u677F_u4ED3_u5E93_u5230_u672C_u5730_u4ED3_u5E93_5D"><a href="#1__5B_u5B89_u88C5_u6A21_u677F_u4ED3_u5E93_u5230_u672C_u5730_u4ED3_u5E93_5D" class="headerlink" title="1 [安装模板仓库到本地仓库]"></a>1 [安装模板仓库到本地仓库]</h3><p>git clone <a href="https://github.com/kolorobot/spring-mvc-quickstart-archetype.git" target="_blank" rel="external">https://github.com/kolorobot/spring-mvc-quickstart-archetype.git</a><br>cd spring-mvc-quickstart-archetype<br>mvn clean install</p>
+<h3 id="2__u521B_u5EFA_u9879_u76EE"><a href="#2__u521B_u5EFA_u9879_u76EE" class="headerlink" title="2 创建项目"></a>2 创建项目</h3><p>（1）使用命令从仓库模板创建项目<br>mvn archetype:generate \<br>        -DarchetypeGroupId=com.github.spring-mvc-archetypes \<br>        -DarchetypeArtifactId=spring-mvc-quickstart \<br>        -DarchetypeVersion=1.0.0 \<br>        -DgroupId=my.groupid \<br>        -DartifactId=my-artifactId \<br>        -Dversion=version</p>
+<p>（2）使用Idea Intellj从仓库模板创建项目<br>New Project-&gt;Maven-&gt;Create From archetypes-&gt;add archetypes<br>填写模板归档类型，项目名，版本（可能会有多个版本，添加时注意不要有空格）<br>GroupId=com.github.spring-mvc-archetypes<br>ArtifactId=spring-mvc-quickstart<br>Version=1.0.0<br>-&gt;Next-&gt;<br>填写项目的归档类型，项目名，版本<br>GroupId=myarchetype<br>ArtifactId=spring-mvc-quickstart<br>Version=1.0.0<br>-&gt;finish （从仓库拷贝相应文件及下载依赖）</p>
+<h3 id="u8FD0_u884C_u9879_u76EE"><a href="#u8FD0_u884C_u9879_u76EE" class="headerlink" title="运行项目"></a>运行项目</h3><p>在pom.xml配置运行容器插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加tomcat 和 jetty运行容器</span></span><br><span class="line">&lt;build&gt;</span><br><span class="line">   &lt;plugins&gt;</span><br><span class="line">       &lt;plugin&gt;</span><br><span class="line">           &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="number">2.2</span>&lt;/version&gt;</span><br><span class="line">           &lt;configuration&gt;</span><br><span class="line">               &lt;path&gt;/&lt;/path&gt;</span><br><span class="line">           &lt;/configuration&gt;</span><br><span class="line">       &lt;/plugin&gt;</span><br><span class="line">       &lt;plugin&gt;</span><br><span class="line">           &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="number">9.2</span>.<span class="number">6</span>.v20141205&lt;/version&gt;</span><br><span class="line">           &lt;configuration&gt;</span><br><span class="line">               &lt;systemProperties&gt;</span><br><span class="line">                   &lt;systemProperty&gt;</span><br><span class="line">                       &lt;name&gt;jetty.base1&lt;/name&gt;</span><br><span class="line">                       &lt;value&gt;jetty.base-value1&lt;/value&gt;</span><br><span class="line">                   &lt;/systemProperty&gt;</span><br><span class="line">               &lt;/systemProperties&gt;</span><br><span class="line">               &lt;scanIntervalSeconds&gt;<span class="number">2</span>&lt;/scanIntervalSeconds&gt;</span><br><span class="line">               &lt;httpConnector&gt;</span><br><span class="line">                   &lt;host&gt;<span class="number">0.0</span>.<span class="number">0.0</span>&lt;/host&gt;</span><br><span class="line">               &lt;/httpConnector&gt;</span><br><span class="line">           &lt;/configuration&gt;</span><br><span class="line">       &lt;/plugin&gt;</span><br><span class="line">   &lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（1）通过mvn命令行运行</p>
+<p>mvn test tomcat7:run<br>mvn test jetty:run</p>
+<p>（2） 通过配置Idea 容器运行<br>Idea 右上角运行配置-&gt;Edit Configration-&gt;+ maven -&gt;<br>添加命令(分别可以使用tomcat 或jetty运行)<br>tomcat7:run<br>jetty:run</p>
+<h3 id="u5728_u6D4F_u89C8_u5668_u4E2D_u67E5_u770B_u7F51_u9875"><a href="#u5728_u6D4F_u89C8_u5668_u4E2D_u67E5_u770B_u7F51_u9875" class="headerlink" title="在浏览器中查看网页"></a>在浏览器中查看网页</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/" data-id="cikwpzmi8000ex1v4k5icrmyr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/21/create-maven-spring-mvc-manully/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">create maven-spring-mvc manully</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 17.5px;">Git</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12.5px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/spring/" style="font-size: 12.5px;">spring</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/02/21/create-maven-spring-mvc-from-archetypes/">create maven-spring-mvc from archetypes</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/21/create-maven-spring-mvc-manully/">create maven-spring-mvc manully</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/16/install-jdk/">install-jdk</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/06/Git-Reset/">Git Reset</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/06/Git-Checkout/">Git Checkout</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
