@@ -61,6 +61,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git-tag" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/23/git-tag/" class="article-date">
+  <time datetime="2016-02-22T16:48:42.000Z" itemprop="datePublished">2016-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/23/git-tag/">git tag</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="u67E5_u770B_u6807_u7B7E"><a href="#u67E5_u770B_u6807_u7B7E" class="headerlink" title="查看标签"></a>查看标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ git tag</span><br><span class="line">v0.<span class="number">1</span></span><br><span class="line">v1.<span class="number">3</span></span><br><span class="line"></span><br><span class="line">$ git tag <span class="operator">-l</span> <span class="string">'v1.4.2.*'</span></span><br><span class="line">v1.<span class="number">4.2</span>.<span class="number">1</span></span><br><span class="line">v1.<span class="number">4.2</span>.<span class="number">2</span></span><br><span class="line">v1.<span class="number">4.2</span>.<span class="number">3</span></span><br><span class="line">v1.<span class="number">4.2</span>.<span class="number">4</span></span><br><span class="line"></span><br><span class="line">git show v1.<span class="number">4</span></span><br><span class="line">tag v1.<span class="number">4</span></span><br><span class="line">Tagger: Scott Chacon &lt;schacon@gee-mail.com&gt;</span><br><span class="line">Date:   Mon Feb <span class="number">9</span> <span class="number">14</span>:<span class="number">45</span>:<span class="number">11</span> <span class="number">2009</span> -<span class="number">0800</span></span><br></pre></td></tr></table></figure>
+<h3 id="u521B_u5EFA_u6807_u7B7E"><a href="#u521B_u5EFA_u6807_u7B7E" class="headerlink" title="创建标签"></a>创建标签</h3><p>$ git tag -a v1.4 -m ‘description’<br>$ git tag<br>v0.1<br>v1.3<br>v1.4</p>
+<h3 id="u521B_u5EFA_u5E26_u7B7E_u540D_u7684_u6807_u7B7E"><a href="#u521B_u5EFA_u5E26_u7B7E_u540D_u7684_u6807_u7B7E" class="headerlink" title="创建带签名的标签"></a>创建带签名的标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ git tag <span class="operator">-s</span> v1.<span class="number">5</span> -m <span class="string">'my signed 1.5 tag'</span></span><br><span class="line">You need a passphrase to unlock the secret key <span class="keyword">for</span></span><br><span class="line">user: <span class="string">"Scott Chacon &lt;schacon@gee-mail.com&gt;"</span></span><br><span class="line"><span class="number">1024</span>-bit DSA key, ID F721C45A, created <span class="number">2009</span>-<span class="number">02</span>-<span class="number">09</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$ git show v1.<span class="number">5</span></span><br><span class="line">tag v1.<span class="number">5</span></span><br><span class="line">Tagger: Scott Chacon &lt;schacon@gee-mail.com&gt;</span><br><span class="line">Date:   Mon Feb <span class="number">9</span> <span class="number">15</span>:<span class="number">22</span>:<span class="number">20</span> <span class="number">2009</span> -<span class="number">0800</span></span><br><span class="line"></span><br><span class="line">my signed <span class="number">1.5</span> tag</span><br><span class="line">-----BEGIN PGP SIGNATURE-----</span><br><span class="line">Version: GnuPG v1.<span class="number">4.8</span> (Darwin)</span><br><span class="line"></span><br><span class="line">iEYEABECAAYFAkmQurIACgkQON3DxfchxFr5cACeIMN+ZxLKggJQf0QYiQBwgySN</span><br><span class="line">Ki0An2JeAVUCAiJ7Ox6ZEtK+NvZAj82/</span><br><span class="line">=WryJ</span><br><span class="line">-----END PGP SIGNATURE-----</span><br><span class="line">commit <span class="number">15027957951</span>b64cf874c3557a0f3547bd83b3ff6</span><br><span class="line">Merge: <span class="number">4</span>a447f7... a6b4c97...</span><br><span class="line">Author: Scott Chacon &lt;schacon@gee-mail.com&gt;</span><br><span class="line">Date:   Sun Feb <span class="number">8</span> <span class="number">19</span>:<span class="number">02</span>:<span class="number">46</span> <span class="number">2009</span> -<span class="number">0800</span></span><br><span class="line"></span><br><span class="line">    Merge branch <span class="string">'experiment'</span></span><br></pre></td></tr></table></figure>
+<h3 id="u63A8_u9001_u6807_u7B7E"><a href="#u63A8_u9001_u6807_u7B7E" class="headerlink" title="推送标签"></a>推送标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git push origin v1.<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#推送全部标签</span></span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/23/git-tag/" data-id="ciky86y9j000hzkv4iua0adaz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ubuntu-turn-on-workspace" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/22/ubuntu-turn-on-workspace/" class="article-date">
@@ -91,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/22/ubuntu-turn-on-workspace/" data-id="ciky7clls0006glv4mf3psfem" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/22/ubuntu-turn-on-workspace/" data-id="ciky86y9c0006zkv4igzxxqdr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-os/">linux os</a></li></ul>
@@ -136,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/add-maven-repository/" data-id="ciky7clm9000lglv4xlxhhkk6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/add-maven-repository/" data-id="ciky86y9o000ozkv41iisr0b7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
@@ -174,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="ciky7cllt0009glv4pdsgunz3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="ciky86y9e0009zkv4lnig3xze" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -214,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/Idea-Intellj-Q-A/" data-id="ciky7clmz001jglv4fqfqr1q3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/Idea-Intellj-Q-A/" data-id="ciky86yag001mzkv4hzz3re13" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a></li></ul>
@@ -259,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/" data-id="ciky7clm6000jglv4yjkixu88" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/" data-id="ciky86y9m000mzkv48nuul4qs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -304,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-manully/" data-id="ciky7cllz000hglv45irf09co" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-manully/" data-id="ciky86y9l000kzkv4lk1a9b3o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -344,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/16/install-jdk/" data-id="ciky7cllv000cglv4j0d12dkp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/16/install-jdk/" data-id="ciky86y9g000czkv4fpad5x8j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK/">JDK</a></li></ul>
@@ -390,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Reset/" data-id="ciky7cln2001oglv4tkr5dedc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Reset/" data-id="ciky86yaj001rzkv4cnvzaj6k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -433,59 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Checkout/" data-id="ciky7cln9001wglv4ytzexfq0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Git-Branch" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/06/Git-Branch/" class="article-date">
-  <time datetime="2016-02-05T17:49:08.000Z" itemprop="datePublished">2016-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/06/Git-Branch/">Git Branch</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="u67E5_u770B_u672C_u5730_u5206_u652F"><a href="#u67E5_u770B_u672C_u5730_u5206_u652F" class="headerlink" title="查看本地分支"></a>查看本地分支</h4><p>$ git branch </p>
-<h4 id="u67E5_u770B_u8FDC_u7A0B_u5206_u652F"><a href="#u67E5_u770B_u8FDC_u7A0B_u5206_u652F" class="headerlink" title="查看远程分支"></a>查看远程分支</h4><p>$ git branch -r<br>/master</p>
-<h4 id="u67E5_u770B_u6240_u6709_u5206_u652F"><a href="#u67E5_u770B_u6240_u6709_u5206_u652F" class="headerlink" title="查看所有分支"></a>查看所有分支</h4><p>$ git branch -a<br>  master<br>  remotes/origin/master</p>
-<h4 id="u82E5_u8981_u67E5_u770B_u5404_u4E2A_u5206_u652F_u6700_u540E_u4E00_u4E2A_u63D0_u4EA4_u5BF9_u8C61_u7684_u4FE1_u606F"><a href="#u82E5_u8981_u67E5_u770B_u5404_u4E2A_u5206_u652F_u6700_u540E_u4E00_u4E2A_u63D0_u4EA4_u5BF9_u8C61_u7684_u4FE1_u606F" class="headerlink" title="若要查看各个分支最后一个提交对象的信息"></a>若要查看各个分支最后一个提交对象的信息</h4><p>$ git branch -v<br>  iss53   93b412c fix javascript issue</p>
-<ul>
-<li>master  7a98805 Merge branch ‘iss53’<br>testing 782fd34 add scott to the author list in the readmes</li>
-</ul>
-<h4 id="u67E5_u770B_u54EA_u4E9B_u5206_u652F_u5DF2_u7ECF_u5408_u5165_u5F53_u524D_u5206_u652F"><a href="#u67E5_u770B_u54EA_u4E9B_u5206_u652F_u5DF2_u7ECF_u5408_u5165_u5F53_u524D_u5206_u652F" class="headerlink" title="查看哪些分支已经合入当前分支"></a>查看哪些分支已经合入当前分支</h4><p>$ git branch –merged<br>  iss53</p>
-<ul>
-<li>master</li>
-</ul>
-<h4 id="u5220_u9664_u5206_u652F"><a href="#u5220_u9664_u5206_u652F" class="headerlink" title="删除分支"></a>删除分支</h4><p>#-D 强制执行<br>$git branch -d master</p>
-<h4 id="u67E5_u770B_u5C1A_u672A_u5408_u5E76_u7684_u5DE5_u4F5C_uFF1A"><a href="#u67E5_u770B_u5C1A_u672A_u5408_u5E76_u7684_u5DE5_u4F5C_uFF1A" class="headerlink" title="查看尚未合并的工作："></a>查看尚未合并的工作：</h4><p>$ git branch –no-merged<br>  testing</p>
-<h4 id="u521B_u5EFA_u5206_u652F"><a href="#u521B_u5EFA_u5206_u652F" class="headerlink" title="创建分支"></a>创建分支</h4><p>git branch test_branch</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Branch/" data-id="ciky7clnb001yglv4t2gr5pht" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Checkout/" data-id="ciky86yar001zzkv4z8hfi50i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -512,7 +502,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -521,7 +511,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 17.5px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12.5px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a>
+      <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 17.5px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12.5px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a>
     </div>
   </div>
 
@@ -530,7 +520,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -540,6 +530,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/02/23/git-tag/">git tag</a>
+          </li>
         
           <li>
             <a href="/2016/02/22/ubuntu-turn-on-workspace/">ubuntu turn on workspace</a>
@@ -555,10 +549,6 @@
         
           <li>
             <a href="/2016/02/21/Idea-Intellj-Q-A/">Idea Intellj Q&amp;A</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/21/create-maven-spring-mvc-from-archetypes/">create maven-spring-mvc from archetypes</a>
           </li>
         
       </ul>
