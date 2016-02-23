@@ -61,6 +61,91 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-config-maven-with-multi-project" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/24/config-maven-with-multi-project/" class="article-date">
+  <time datetime="2016-02-23T17:16:53.000Z" itemprop="datePublished">2016-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/24/config-maven-with-multi-project/">config maven with multi-project</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html" target="_blank" rel="external">官方文档</a><br>maven子项目pom.xml会继承父项目的公共模块，如</p>
+<p><dependencymanagement>、<dependencys>、<plugins> and <properties><br>dependencyManagment定义模块的默认版本<br>denpendencys定义当前使用的版本<br>properties定义pom.xml中的公共属性（变量）<br>plugins定义工程需要使用的一些工具</properties></plugins></dependencys></dependencymanagement></p>
+<p>配置多工程的maven项目</p>
+<p>#pom.xml in parent<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;project&gt;</span><br><span class="line"> &lt;modelVersion&gt;<span class="number">4.0</span>.<span class="number">0</span>&lt;/modelVersion&gt;</span><br><span class="line"> &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;parent&lt;/artifactId&gt;</span><br><span class="line"> &lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line"> &lt;name&gt;parent&lt;/name&gt;</span><br><span class="line"> &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line">	</span><br><span class="line">&lt;!--包含的子模块--&gt;</span><br><span class="line">&lt;modules&gt;</span><br><span class="line">	&lt;module&gt;module1&lt;/module&gt;</span><br><span class="line">	&lt;module&gt;module2&lt;/module&gt;</span><br><span class="line">&lt;/modules&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--配置通用属性--&gt;</span><br><span class="line"> &lt;properties&gt;</span><br><span class="line">	&lt;variable&gt;version1&lt;/variable&gt;</span><br><span class="line"> &lt;/properties&gt; </span><br><span class="line"></span><br><span class="line"> &lt;!-- 定义默认的模块版本--&gt;</span><br><span class="line"> &lt;dependencyManagement&gt;</span><br><span class="line">   &lt;dependencies&gt;</span><br><span class="line">     &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;<span class="built_in">test</span>&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;d&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;<span class="number">1.2</span>&lt;/version&gt;</span><br><span class="line">     &lt;/dependency&gt;</span><br><span class="line">   &lt;/dependencies&gt;</span><br><span class="line"> &lt;/dependencyManagement&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &lt;!-- 配置公共依赖--&gt;</span><br><span class="line"> &lt;dependencies&gt;</span><br><span class="line">     &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;<span class="built_in">test</span>&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;d&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;<span class="number">1.2</span>&lt;/version&gt;</span><br><span class="line">     &lt;/dependency&gt;</span><br><span class="line"> &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">&lt;!-- 配置公共的工具--&gt;</span><br><span class="line">  &lt;build&gt;</span><br><span class="line">	 &lt;plugins&gt;</span><br><span class="line">		&lt;plugin&gt;</span><br><span class="line">		 ...</span><br><span class="line">		&lt;/plugin&gt;</span><br><span class="line">	 &lt;/plugins&gt;</span><br><span class="line"> &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u914D_u7F6E_u6A21_u57571pom-xml"><a href="#u914D_u7F6E_u6A21_u57571pom-xml" class="headerlink" title="配置模块1pom.xml"></a>配置模块1pom.xml</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;project&gt;</span><br><span class="line"> &lt;modelVersion&gt;<span class="number">4.0</span>.<span class="number">0</span>&lt;/modelVersion&gt;</span><br><span class="line"> &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;module1&lt;/artifactId&gt;</span><br><span class="line"> &lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line"> &lt;name&gt;module1&lt;/name&gt;</span><br><span class="line"> &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--包含的子模块--&gt;</span><br><span class="line">&lt;modules&gt;</span><br><span class="line">        &lt;module&gt;./module2&lt;/module&gt;</span><br><span class="line">&lt;/modules&gt;</span><br><span class="line"> </span><br><span class="line">&lt;!--配置父模块，获得信息继承--&gt;</span><br><span class="line">  &lt;parent&gt;</span><br><span class="line">    &lt;artifactId&gt;parent&lt;/artifactId&gt;</span><br><span class="line">    &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line">  &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line"> &lt;!-- 模块特有依赖--&gt;</span><br><span class="line"> &lt;dependencies&gt;</span><br><span class="line">     &lt;!--配置对模块<span class="number">2</span>依赖关系--&gt;</span><br><span class="line">	 &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;module2&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;<span class="number">1.2</span>&lt;/version&gt;</span><br><span class="line"> &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="u914D_u7F6E_u6A21_u57572pom-xml"><a href="#u914D_u7F6E_u6A21_u57572pom-xml" class="headerlink" title="配置模块2pom.xml"></a>配置模块2pom.xml</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;project&gt;</span><br><span class="line"> &lt;modelVersion&gt;<span class="number">4.0</span>.<span class="number">0</span>&lt;/modelVersion&gt;</span><br><span class="line"> &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;module2&lt;/artifactId&gt;</span><br><span class="line"> &lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line"> &lt;name&gt;module2&lt;/name&gt;</span><br><span class="line"> &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--配置父模块，获得信息继承,不能从module1继承，否则会继承对自己依赖，造成循环以来链--&gt;</span><br><span class="line">  &lt;parent&gt;</span><br><span class="line">    &lt;artifactId&gt;parent&lt;/artifactId&gt;</span><br><span class="line">    &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line">  &lt;/parent&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/24/config-maven-with-multi-project/" data-id="cikzpemer000ry4v4zw3h5w6k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-import-dependency" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/24/import-dependency/" class="article-date">
+  <time datetime="2016-02-23T17:11:23.000Z" itemprop="datePublished">2016-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/24/import-dependency/">import dependency</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Idea intellj 导入maven依赖包<br>默认情况下，pom.xml变化时，idea 会提示 Auto-Import for Maven projects，点击下载依赖 </p>
+<p>开启自动加载<br>File &gt; Settings &gt; Maven &gt; Importing, there is a checkbox that says “Import Maven projects automatically”.</p>
+<p>使用命令行加载<br>If that doesn’t help, then I would suggest to make a full clean-up and start again:<br>Close your project window (and IntelliJ) and remove all *.iml files and all .idea folders (there should be one per module)<br>Run mvn clean install from the command line<br>Re-import the project into IntelliJ and pay attention when it asks you to enable auto-import</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/24/import-dependency/" data-id="cikzpemej000fy4v4dymtuxmg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-git-tag" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/23/git-tag/" class="article-date">
@@ -91,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/23/git-tag/" data-id="ciky86y9j000hzkv4iua0adaz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/23/git-tag/" data-id="cikzpemem000ky4v4a30qoc74" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -133,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/22/ubuntu-turn-on-workspace/" data-id="ciky86y9c0006zkv4igzxxqdr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/22/ubuntu-turn-on-workspace/" data-id="cikzpemed0006y4v496qoo86r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-os/">linux os</a></li></ul>
@@ -178,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/add-maven-repository/" data-id="ciky86y9o000ozkv41iisr0b7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/add-maven-repository/" data-id="cikzpemet000ty4v4bksc8fi7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
@@ -216,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="ciky86y9e0009zkv4lnig3xze" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="cikzpemeg0009y4v4pdvk0qx5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -256,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/Idea-Intellj-Q-A/" data-id="ciky86yag001mzkv4hzz3re13" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/Idea-Intellj-Q-A/" data-id="cikzpemfl001qy4v4x30rcpnb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a></li></ul>
@@ -301,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/" data-id="ciky86y9m000mzkv48nuul4qs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/" data-id="cikzpemep000py4v4usqaqco5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -346,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-manully/" data-id="ciky86y9l000kzkv4lk1a9b3o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-manully/" data-id="cikzpemeo000ny4v44zt694pw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -386,99 +471,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/16/install-jdk/" data-id="ciky86y9g000czkv4fpad5x8j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/16/install-jdk/" data-id="cikzpemeh000cy4v4h8t2x0nd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK/">JDK</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Git-Reset" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/06/Git-Reset/" class="article-date">
-  <time datetime="2016-02-05T18:27:29.000Z" itemprop="datePublished">2016-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/06/Git-Reset/">Git Reset</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="git_reset_u53EF_u7528_u4E8E_u4E0D_u540C_u7684Commit_u521B_u5EFA_u5206_u652F"><a href="#git_reset_u53EF_u7528_u4E8E_u4E0D_u540C_u7684Commit_u521B_u5EFA_u5206_u652F" class="headerlink" title="git reset可用于不同的Commit创建分支"></a>git reset可用于不同的Commit创建分支</h4><h4 id="u4FEE_u6539head_u4F4D_u7F6E"><a href="#u4FEE_u6539head_u4F4D_u7F6E" class="headerlink" title="修改head位置"></a>修改head位置</h4><p>–soft</p>
-<h4 id="u4FEE_u6539head_u4F4D_u7F6E_u5E76_u91CD_u7F6Eindex"><a href="#u4FEE_u6539head_u4F4D_u7F6E_u5E76_u91CD_u7F6Eindex" class="headerlink" title="修改head位置并重置index"></a>修改head位置并重置index</h4><p>–mixed（默认）</p>
-<h4 id="u4FEE_u6539head_u4F4D_u7F6E_uFF0C_u91CD_u7F6Eindex_u548C_u5DE5_u4F5C_u526F_u672C"><a href="#u4FEE_u6539head_u4F4D_u7F6E_uFF0C_u91CD_u7F6Eindex_u548C_u5DE5_u4F5C_u526F_u672C" class="headerlink" title="修改head位置，重置index和工作副本"></a>修改head位置，重置index和工作副本</h4><p>–hard</p>
-<h4 id="u91CD_u7F6E_u5230_u67D0_u4E2Acommit_2C_u4F46_u662F_u672C_u5730_u4FEE_u6539_u8FC7_u7684_u6587_u4EF6_u4E0D_u4F1A_u88AB_u91CD_u7F6E"><a href="#u91CD_u7F6E_u5230_u67D0_u4E2Acommit_2C_u4F46_u662F_u672C_u5730_u4FEE_u6539_u8FC7_u7684_u6587_u4EF6_u4E0D_u4F1A_u88AB_u91CD_u7F6E" class="headerlink" title="重置到某个commit,但是本地修改过的文件不会被重置"></a>重置到某个commit,但是本地修改过的文件不会被重置</h4><p>–keep</p>
-<h4 id="u5207_u6362_u5230_u524D1_u4E2Acommit"><a href="#u5207_u6362_u5230_u524D1_u4E2Acommit" class="headerlink" title="切换到前1个commit"></a>切换到前1个commit</h4><p>git reset –soft HEAD^</p>
-<h4 id="u524D_u6362_u5230_u524D3_u4E2Acommit_2C_u8BE5_u547D_u4EE4_u4F1A_u4FEE_u6539_u5F53_u524D_u5206_u652Fhead_uFF0C_u901A_u5E38_u5148_u521B_u5EFA_u5E76_u68C0_u51FA_u5206_u652F_u540E_u518D_u91CD_u7F6Ehead"><a href="#u524D_u6362_u5230_u524D3_u4E2Acommit_2C_u8BE5_u547D_u4EE4_u4F1A_u4FEE_u6539_u5F53_u524D_u5206_u652Fhead_uFF0C_u901A_u5E38_u5148_u521B_u5EFA_u5E76_u68C0_u51FA_u5206_u652F_u540E_u518D_u91CD_u7F6Ehead" class="headerlink" title="前换到前3个commit,该命令会修改当前分支head，通常先创建并检出分支后再重置head"></a>前换到前3个commit,该命令会修改当前分支head，通常先创建并检出分支后再重置head</h4><p>$ git reset –hard HEAD~3</p>
-<h4 id="u91CD_u7F6E_u67D0_u4E2A_u6587_u4EF6_u7684_u7D22_u5F15"><a href="#u91CD_u7F6E_u67D0_u4E2A_u6587_u4EF6_u7684_u7D22_u5F15" class="headerlink" title="重置某个文件的索引"></a>重置某个文件的索引</h4><p>git reset – frotz.c </p>
-<h4 id="u5207_u6362_u5230_u524D_u4E09_u4E2A_u5206_u652F_uFF0C_u4F46_u4FEE_u6539_u8FC7_u7684_u6587_u4EF6_u4E0D_u4F1A_u88AB_u91CD_u7F6E"><a href="#u5207_u6362_u5230_u524D_u4E09_u4E2A_u5206_u652F_uFF0C_u4F46_u4FEE_u6539_u8FC7_u7684_u6587_u4EF6_u4E0D_u4F1A_u88AB_u91CD_u7F6E" class="headerlink" title="切换到前三个分支，但修改过的文件不会被重置"></a>切换到前三个分支，但修改过的文件不会被重置</h4><p>git reset –keep HEAD~3</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Reset/" data-id="ciky86yaj001rzkv4cnvzaj6k" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Git-Checkout" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/06/Git-Checkout/" class="article-date">
-  <time datetime="2016-02-05T17:57:50.000Z" itemprop="datePublished">2016-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/06/Git-Checkout/">Git Checkout</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="git_checkout_u7528_u4E8E_u4ECE_u4E0D_u540C_u5206_u652F_u6216_u8005_u4E0D_u540CCommit_u68C0_u51FA_u6587_u4EF6_uFF0CHead_u4F4D_u7F6E_u4E0D_u53D8"><a href="#git_checkout_u7528_u4E8E_u4ECE_u4E0D_u540C_u5206_u652F_u6216_u8005_u4E0D_u540CCommit_u68C0_u51FA_u6587_u4EF6_uFF0CHead_u4F4D_u7F6E_u4E0D_u53D8" class="headerlink" title="git checkout用于从不同分支或者不同Commit检出文件，Head位置不变"></a>git checkout用于从不同分支或者不同Commit检出文件，Head位置不变</h4><h4 id="u521B_u5EFA_u5E76_u5207_u6362_u5206_u652F"><a href="#u521B_u5EFA_u5E76_u5207_u6362_u5206_u652F" class="headerlink" title="创建并切换分支"></a>创建并切换分支</h4><p>$ git checkout -b dev</p>
-<h4 id="u76F8_u5F53_u4E8E_u4EE5_u4E0B_u4E24_u6761_u547D_u4EE4"><a href="#u76F8_u5F53_u4E8E_u4EE5_u4E0B_u4E24_u6761_u547D_u4EE4" class="headerlink" title="相当于以下两条命令"></a>相当于以下两条命令</h4><h4 id="u521B_u5EFA_u5206_u652F"><a href="#u521B_u5EFA_u5206_u652F" class="headerlink" title="创建分支"></a>创建分支</h4><p>$ git branch dev</p>
-<h4 id="u5207_u6362_u5206_u652F"><a href="#u5207_u6362_u5206_u652F" class="headerlink" title="切换分支"></a>切换分支</h4><p>$ git checkout dev</p>
-<h4 id="f_u5F3A_u5236_u5207_u6362_2C_u4F1A_u4E22_u5F03_u672C_u5730_u4FEE_u6539"><a href="#f_u5F3A_u5236_u5207_u6362_2C_u4F1A_u4E22_u5F03_u672C_u5730_u4FEE_u6539" class="headerlink" title="-f强制切换,会丢弃本地修改"></a>-f强制切换,会丢弃本地修改</h4><p>$git checkout -f dev</p>
-<h4 id="u68C0_u51FA_u5176_u4E2D_u67D0_u4E2A_u6587_u4EF6"><a href="#u68C0_u51FA_u5176_u4E2D_u67D0_u4E2A_u6587_u4EF6" class="headerlink" title="检出其中某个文件"></a>检出其中某个文件</h4><p>git checkout – hello.rb</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Checkout/" data-id="ciky86yar001zzkv4z8hfi50i" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
 
     </footer>
   </div>
@@ -502,7 +498,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -511,7 +507,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 17.5px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12.5px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a>
+      <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 17.5px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12.5px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 15px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a>
     </div>
   </div>
 
@@ -520,7 +516,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -532,6 +528,14 @@
       <ul>
         
           <li>
+            <a href="/2016/02/24/config-maven-with-multi-project/">config maven with multi-project</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/24/import-dependency/">import dependency</a>
+          </li>
+        
+          <li>
             <a href="/2016/02/23/git-tag/">git tag</a>
           </li>
         
@@ -541,14 +545,6 @@
         
           <li>
             <a href="/2016/02/21/add-maven-repository/">add maven repository</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/21/spring-Q-A/">spring Q&amp;A</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/21/Idea-Intellj-Q-A/">Idea Intellj Q&amp;A</a>
           </li>
         
       </ul>
