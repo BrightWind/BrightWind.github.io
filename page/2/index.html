@@ -61,6 +61,91 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Idea-Intellj-Q-A" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/21/Idea-Intellj-Q-A/" class="article-date">
+  <time datetime="2016-02-21T15:49:15.000Z" itemprop="datePublished">2016-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/21/Idea-Intellj-Q-A/">Idea Intellj Q&amp;A</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="mark_as_directory_uFF08_u76EE_u5F55_u53F3_u952E_u83DC_u5355_uFF09"><a href="#mark_as_directory_uFF08_u76EE_u5F55_u53F3_u952E_u83DC_u5355_uFF09" class="headerlink" title="mark as directory（目录右键菜单）"></a>mark as directory（目录右键菜单）</h3><p>exclude<br>不包含目录，此时目录被标记为空心红框，该目录下的文件不被检测，右键新建文件时，找不到java class<br>cancel exclusion<br>取消不包含</p>
+<p>通常，src/main/java被标记为根目录，其下的目录只有exclude和cancel exclusion,右键菜单，设置和取消根目录<br>mark as source root<br>unmark as source root</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/21/Idea-Intellj-Q-A/" data-id="cil13dfjx001yg3v4mopxcyfl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-create-maven-spring-mvc-from-archetypes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/21/create-maven-spring-mvc-from-archetypes/" class="article-date">
+  <time datetime="2016-02-21T15:36:15.000Z" itemprop="datePublished">2016-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/21/create-maven-spring-mvc-from-archetypes/">create maven-spring-mvc from archetypes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1__5B_u5B89_u88C5_u6A21_u677F_u4ED3_u5E93_u5230_u672C_u5730_u4ED3_u5E93_5D"><a href="#1__5B_u5B89_u88C5_u6A21_u677F_u4ED3_u5E93_u5230_u672C_u5730_u4ED3_u5E93_5D" class="headerlink" title="1 [安装模板仓库到本地仓库]"></a>1 [安装模板仓库到本地仓库]</h3><p>git clone <a href="https://github.com/kolorobot/spring-mvc-quickstart-archetype.git" target="_blank" rel="external">https://github.com/kolorobot/spring-mvc-quickstart-archetype.git</a><br>cd spring-mvc-quickstart-archetype<br>mvn clean install</p>
+<h3 id="2__u521B_u5EFA_u9879_u76EE"><a href="#2__u521B_u5EFA_u9879_u76EE" class="headerlink" title="2 创建项目"></a>2 创建项目</h3><p>（1）使用命令从仓库模板创建项目<br>mvn archetype:generate \<br>        -DarchetypeGroupId=com.github.spring-mvc-archetypes \<br>        -DarchetypeArtifactId=spring-mvc-quickstart \<br>        -DarchetypeVersion=1.0.0 \<br>        -DgroupId=my.groupid \<br>        -DartifactId=my-artifactId \<br>        -Dversion=version</p>
+<p>（2）使用Idea Intellj从仓库模板创建项目<br>New Project-&gt;Maven-&gt;Create From archetypes-&gt;add archetypes<br>填写模板归档类型，项目名，版本（可能会有多个版本，添加时注意不要有空格）<br>GroupId=com.github.spring-mvc-archetypes<br>ArtifactId=spring-mvc-quickstart<br>Version=1.0.0<br>-&gt;Next-&gt;<br>填写项目的归档类型，项目名，版本<br>GroupId=myarchetype<br>ArtifactId=spring-mvc-quickstart<br>Version=1.0.0<br>-&gt;finish （从仓库拷贝相应文件及下载依赖）</p>
+<h3 id="u8FD0_u884C_u9879_u76EE"><a href="#u8FD0_u884C_u9879_u76EE" class="headerlink" title="运行项目"></a>运行项目</h3><p>在pom.xml配置运行容器插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加tomcat 和 jetty运行容器</span></span><br><span class="line">&lt;build&gt;</span><br><span class="line">   &lt;plugins&gt;</span><br><span class="line">       &lt;plugin&gt;</span><br><span class="line">           &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="number">2.2</span>&lt;/version&gt;</span><br><span class="line">           &lt;configuration&gt;</span><br><span class="line">               &lt;path&gt;/&lt;/path&gt;</span><br><span class="line">           &lt;/configuration&gt;</span><br><span class="line">       &lt;/plugin&gt;</span><br><span class="line">       &lt;plugin&gt;</span><br><span class="line">           &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="number">9.2</span>.<span class="number">6</span>.v20141205&lt;/version&gt;</span><br><span class="line">           &lt;configuration&gt;</span><br><span class="line">               &lt;systemProperties&gt;</span><br><span class="line">                   &lt;systemProperty&gt;</span><br><span class="line">                       &lt;name&gt;jetty.base1&lt;/name&gt;</span><br><span class="line">                       &lt;value&gt;jetty.base-value1&lt;/value&gt;</span><br><span class="line">                   &lt;/systemProperty&gt;</span><br><span class="line">               &lt;/systemProperties&gt;</span><br><span class="line">               &lt;scanIntervalSeconds&gt;<span class="number">2</span>&lt;/scanIntervalSeconds&gt;</span><br><span class="line">               &lt;httpConnector&gt;</span><br><span class="line">                   &lt;host&gt;<span class="number">0.0</span>.<span class="number">0.0</span>&lt;/host&gt;</span><br><span class="line">               &lt;/httpConnector&gt;</span><br><span class="line">           &lt;/configuration&gt;</span><br><span class="line">       &lt;/plugin&gt;</span><br><span class="line">   &lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（1）通过mvn命令行运行</p>
+<p>mvn test tomcat7:run<br>mvn test jetty:run</p>
+<p>（2） 通过配置Idea 容器运行<br>Idea 右上角运行配置-&gt;Edit Configration-&gt;+ maven -&gt;<br>添加命令(分别可以使用tomcat 或jetty运行)<br>tomcat7:run<br>jetty:run</p>
+<h3 id="u5728_u6D4F_u89C8_u5668_u4E2D_u67E5_u770B_u7F51_u9875"><a href="#u5728_u6D4F_u89C8_u5668_u4E2D_u67E5_u770B_u7F51_u9875" class="headerlink" title="在浏览器中查看网页"></a>在浏览器中查看网页</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/" data-id="cil13dfit000xg3v4uweakhwg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-create-maven-spring-mvc-manully" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/21/create-maven-spring-mvc-manully/" class="article-date">
@@ -94,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-manully/" data-id="cil050y3v000rwev4bq6a6lcd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-manully/" data-id="cil13dfis000vg3v4qf6wali4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -134,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/16/install-jdk/" data-id="cil050y3m000cwev4t9p3cj2t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/16/install-jdk/" data-id="cil13dfie000gg3v4xp3mkn2a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK/">JDK</a></li></ul>
@@ -180,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Reset/" data-id="cil050y54001zwev4p2tzb37j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Reset/" data-id="cil13dfk00023g3v4p3sx19ll" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -223,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Checkout/" data-id="cil050y5e0027wev4u4l7qbb1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Checkout/" data-id="cil13dfk7002bg3v4uzaelgq4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -275,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Branch/" data-id="cil050y5g0029wev445wjx4yf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Branch/" data-id="cil13dfk8002dg3v4d57yjuyn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -316,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Fetch/" data-id="cil050y590023wev4az3lfpep" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Fetch/" data-id="cil13dfk40027g3v4uxhsxzg2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -360,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Remote/" data-id="cil050y570021wev4zgq2vjjs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Remote/" data-id="cil13dfk20025g3v405dxwby7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -399,7 +484,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Clone/" data-id="cil050y5c0025wev4nbqj6sl6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Clone/" data-id="cil13dfk50029g3v48mbqhwl8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -411,111 +496,9 @@
 
 
   
-    <article id="post-Repair-Grub-File" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/23/Repair-Grub-File/" class="article-date">
-  <time datetime="2016-01-23T14:08:27.000Z" itemprop="datePublished">2016-01-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/23/Repair-Grub-File/">Repair Grub File</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>(1) run update-grub to file boot image<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">brightwind@brightwind:~/.ssh/blog$ sudo update-grub</span><br><span class="line">Generating grub configuration file ...</span><br><span class="line">Warning: Setting GRUB_TIMEOUT to a non-zero value when GRUB_HIDDEN_TIMEOUT is <span class="built_in">set</span> is no longer supported.</span><br><span class="line">Found linux image: /boot/vmlinuz-<span class="number">3.19</span>.<span class="number">0</span>-<span class="number">25</span>-generic</span><br><span class="line">Found initrd image: /boot/initrd.img-<span class="number">3.19</span>.<span class="number">0</span>-<span class="number">25</span>-generic</span><br><span class="line">Found memtest86+ image: /boot/memtest86+.elf</span><br><span class="line">Found memtest86+ image: /boot/memtest86+.bin</span><br><span class="line">Found Windows <span class="number">7</span> (loader) on /dev/sda1</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/23/Repair-Grub-File/" data-id="cil050y490017wev4f3oxinv6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-OS/">Linux OS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-AngularJS-Study-Note-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/21/AngularJS-Study-Note-1/" class="article-date">
-  <time datetime="2016-01-20T17:14:35.000Z" itemprop="datePublished">2016-01-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/21/AngularJS-Study-Note-1/">AngularJS Study Note</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="State_Manager"><a href="#State_Manager" class="headerlink" title="State Manager."></a>State Manager.</h2><p><a href="https://github.com/angular-ui/ui-router/wiki" target="_blank" rel="external">reference</a><br><a href="https://docs.angularjs.org/tutorial" target="_blank" rel="external">reference</a></p>
-<p>The new $stateProvider works similar to Angular’s v1 router, but it focuses purely on state.<br>A state corresponds to a “place” （对应着一个位置）<br>A state describes (via the controller / template / view properties) what the UI looks like and does at that place. （描述UI的信息及表示位置）<br>States often have things in common, and the primary way of factoring out these commonalities in this model is via the state hierarchy, i.e. parent/child states aka nested states. （共用的方式）</p>
-<h2 id="The_simplest_form_of_state"><a href="#The_simplest_form_of_state" class="headerlink" title="The simplest form of state"></a>The simplest form of state</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- <span class="keyword">in</span> index.html --&gt;</span><br><span class="line">&lt;body ng-controller=<span class="string">"MainCtrl"</span>&gt;</span><br><span class="line">  &lt;section ui-view&gt;&lt;/section&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">// <span class="keyword">in</span> app-states.js (or whatever you want to name it)</span><br><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'contacts'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;h1&gt;My Contacts&lt;/h1&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="Where_does_the_template_get_inserted_3F"><a href="#Where_does_the_template_get_inserted_3F" class="headerlink" title="Where does the template get inserted?"></a>Where does the template get inserted?</h2><p>如果没有父亲模板，则.html页面就是他的模板<br>When a state is activated, its templates are automatically inserted into the ui-view of its parent state’s template. If it’s a top-level state—which ‘contacts’ is because it has no parent state–then its parent template is index.html.<br>Right now, the ‘contacts’ state won’t ever be activated. So let’s see how we can activate a state.</p>
-<h2 id="Activating_a_state"><a href="#Activating_a_state" class="headerlink" title="Activating a state"></a>Activating a state</h2><p>There are three main ways to activate a state:<br>Call $state.go(). High-level convenience method. Learn More<br>Click a link containing the ui-sref directive. Learn More<br>Navigate to the url associated with the state. Learn More.</p>
-<h2 id="Templates"><a href="#Templates" class="headerlink" title="Templates"></a>Templates</h2><p>There are several methods for configuring a state’s template.<br>As seen above, the simplest way to set your template is via the template config property.<br> 1)  write inline<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'contacts'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;h1&gt;My Contacts&lt;/h1&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p> 2) provide url<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'contacts'</span>, &#123;</span><br><span class="line">  templateUrl: <span class="string">'contacts.html'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'contacts'</span>, &#123;</span><br><span class="line">  templateUrl: <span class="keyword">function</span> (<span class="variable">$stateParams</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">'/partials/contacts.'</span> + <span class="variable">$stateParams</span>.filterBy + <span class="string">'.html'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>3) use a template provider function<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'contacts'</span>, &#123;</span><br><span class="line">  templateProvider: <span class="keyword">function</span> (<span class="variable">$timeout</span>, <span class="variable">$stateParams</span>) &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$timeout</span>(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">      <span class="built_in">return</span> <span class="string">'&lt;h1&gt;'</span> + <span class="variable">$stateParams</span>.contactId + <span class="string">'&lt;/h1&gt;'</span></span><br><span class="line">    &#125;, <span class="number">100</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>If you’d like your <ui-view> to have some default content before it’s populated by a state activation, you can do that as well. The contents will be replaced as soon as a state is activated and populates the ui-view with a template.(给ui-view提供默认内容)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ui-view&gt;</span><br><span class="line">        &lt;i&gt;Some content will load here!&lt;/i&gt;</span><br><span class="line">    &lt;/ui-view&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></ui-view></p>
-<h2 id="Controllers"><a href="#Controllers" class="headerlink" title="Controllers"></a>Controllers</h2><p>1）添加controler到模板<br>You can assign a controller to your template.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'contacts'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;'</span>,</span><br><span class="line">  controller: <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">    <span class="variable">$scope</span>.title = <span class="string">'My Contacts'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">#Or if you already have a controller defined on the module, like this:</span></span><br><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'contacts'</span>, &#123;</span><br><span class="line">  template: ...,</span><br><span class="line">  controller: <span class="string">'ContactsCtrl'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>2）两种controler别名<br>Alternatively using the “controller as” syntax the above becomes:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'contacts'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;h1&gt;&#123;&#123;contact.title&#125;&#125;&lt;/h1&gt;'</span>,</span><br><span class="line">  controller: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    this.title = <span class="string">'My Contacts'</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  controllerAs: <span class="string">'contact'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>and<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'contacts'</span>, &#123;</span><br><span class="line">  template: ...,</span><br><span class="line">  controller: <span class="string">'ContactsCtrl as contact'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>3） 动态提供controler<br>you can use the controllerProvider to dynamically return a controller function or string<br>$stateProvider.state(‘contacts’, {<br>  template: …,<br>  controllerProvider: function($stateParams) {<br>      var ctrlName = $stateParams.type + “Controller”;<br>      return ctrlName;<br>  }<br>})</p>
-<p>4） controler中监听事件<br>Controllers can use the $scope.$on() method to listen for events fired by state transitions.<br>Controllers are instantiated on an as-needed basis, when their corresponding scopes are created, i.e. when the user manually navigates to a state via a URL, $stateProvider will load the correct template into the view, then bind the controller to the template’s scope.</p>
-<h2 id="Resolve"><a href="#Resolve" class="headerlink" title="Resolve"></a>Resolve</h2><p>使用resolve向controler提供参数,resolve由key/value组成，key是注入控制器的依赖的名字，value可以是字符串（服务的别名）或函数（返回值作为依赖注入，必须执行完毕才实例化控制器）<br>You can use resolve to provide your controller with content or data that is custom to the state.resolve is an optional map of dependencies which should be injected into the controller.<br>If any of these dependencies are promises, they will be resolved and converted to a value beforethe controller is instantiated and the $stateChangeSuccess event is fired.<br>The resolve property is a map object. The map object contains key/value pairs of:<br>key – {string}: a name of a dependency to be injected into the controller.<br>factory - {string|function}:<br>If string, then it is an alias for a service.<br>Otherwise if function, then it is injected and the return value is treated as the dependency. If the result is a promise, it is resolved before the controller is instantiated and its value is injected into the controller.</p>
-<h3 id="Examples_3A"><a href="#Examples_3A" class="headerlink" title="Examples:"></a>Examples:</h3><p>Each of the objects in resolve below must be resolved (via deferred.resolve() if they are a promise) before the controller is instantiated. Notice how each resolve object is injected as a parameter into the controller.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">'myState'</span>, &#123;</span><br><span class="line">      resolve:&#123;</span><br><span class="line"></span><br><span class="line">         // Example using <span class="keyword">function</span> with simple <span class="built_in">return</span> value.</span><br><span class="line">         // Since it<span class="string">'s not a promise, it resolves immediately.</span><br><span class="line">         simpleObj:  function()&#123;</span><br><span class="line">            return &#123;value: '</span>simple!<span class="string">'&#125;;</span><br><span class="line">         &#125;,</span><br><span class="line"></span><br><span class="line">         // Example using function with returned promise.</span><br><span class="line">         // This is the typical use case of resolve.</span><br><span class="line">         // You need to inject any services that you are</span><br><span class="line">         // using, e.g. $http in this example</span><br><span class="line">         promiseObj:  function($http)&#123;</span><br><span class="line">            // $http returns a promise for the url data</span><br><span class="line">            return $http(&#123;method: '</span>GET<span class="string">', url: '</span>/someUrl<span class="string">'&#125;);</span><br><span class="line">         &#125;,</span><br><span class="line"></span><br><span class="line">         // Another promise example. If you need to do some </span><br><span class="line">         // processing of the result, use .then, and your </span><br><span class="line">         // promise is chained in for free. This is another</span><br><span class="line">         // typical use case of resolve.</span><br><span class="line">         promiseObj2:  function($http)&#123;</span><br><span class="line">            return $http(&#123;method: '</span>GET<span class="string">', url: '</span>/someUrl<span class="string">'&#125;)</span><br><span class="line">               .then (function (data) &#123;</span><br><span class="line">                   return doSomeStuffFirst(data);</span><br><span class="line">               &#125;);</span><br><span class="line">         &#125;,        </span><br><span class="line"></span><br><span class="line">         // Example using a service by name as string.</span><br><span class="line">         // This would look for a '</span>translations<span class="string">' service</span><br><span class="line">         // within the module and return it.</span><br><span class="line">         // Note: The service could return a promise and</span><br><span class="line">         // it would work just like the example above</span><br><span class="line">         translations: "translations",</span><br><span class="line"></span><br><span class="line">         // Example showing injection of service into</span><br><span class="line">         // resolve function. Service then returns a</span><br><span class="line">         // promise. Tip: Inject $stateParams to get</span><br><span class="line">         // access to url parameters.</span><br><span class="line">         translations2: function(translations, $stateParams)&#123;</span><br><span class="line">             // Assume that getLang is a service method</span><br><span class="line">             // that uses $http to fetch some translations.</span><br><span class="line">             // Also assume our url was "/:lang/home".</span><br><span class="line">             return translations.getLang($stateParams.lang);</span><br><span class="line">         &#125;,</span><br><span class="line"></span><br><span class="line">         // Example showing returning of custom made promise</span><br><span class="line">         greeting: function($q, $timeout)&#123;</span><br><span class="line">             var deferred = $q.defer();</span><br><span class="line">             $timeout(function() &#123;</span><br><span class="line">                 deferred.resolve('</span>Hello!<span class="string">');</span><br><span class="line">             &#125;, 1000);</span><br><span class="line">             return deferred.promise;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      // The controller waits for every one of the above items to be</span><br><span class="line">      // completely resolved before instantiation. For example, the</span><br><span class="line">      // controller will not instantiate until promiseObj'</span>s promise has </span><br><span class="line">      // been resolved. Then those objects are injected into the controller</span><br><span class="line">      // and available <span class="keyword">for</span> use.  </span><br><span class="line">      controller: <span class="keyword">function</span>(<span class="variable">$scope</span>, simpleObj, promiseObj, promiseObj2, translations, translations2, greeting)&#123;</span><br><span class="line">          <span class="variable">$scope</span>.simple = simpleObj.value;</span><br><span class="line"></span><br><span class="line">          // You can be sure that promiseObj is ready to use!</span><br><span class="line">          <span class="variable">$scope</span>.items = promiseObj.data.items;</span><br><span class="line">          <span class="variable">$scope</span>.items = promiseObj2.items;</span><br><span class="line"></span><br><span class="line">          <span class="variable">$scope</span>.title = translations.getLang(<span class="string">"english"</span>).title;</span><br><span class="line">          <span class="variable">$scope</span>.title = translations2.title;</span><br><span class="line"></span><br><span class="line">          <span class="variable">$scope</span>.greeting = greeting;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">Learn more about how resolved dependencies are inherited down to child states.</span><br><span class="line"><span class="comment">## Attach Custom Data to State Objects</span></span><br><span class="line">在state对象中添加自定义数据</span><br><span class="line">You can attach custom data to the state object (we recommend using a data property to avoid conflicts).</span><br><span class="line">```bash</span><br><span class="line">// Example shows an object-based state and a string-based state</span><br><span class="line">var contacts = &#123; </span><br><span class="line">    name: <span class="string">'contacts'</span>,</span><br><span class="line">    templateUrl: <span class="string">'contacts.html'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        customData1: <span class="number">5</span>,</span><br><span class="line">        customData2: <span class="string">"blue"</span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$stateProvider</span></span><br><span class="line">  .state(contacts)</span><br><span class="line">  .state(<span class="string">'contacts.list'</span>, &#123;</span><br><span class="line">    templateUrl: <span class="string">'contacts.list.html'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        customData1: <span class="number">44</span>,</span><br><span class="line">        customData2: <span class="string">"red"</span></span><br><span class="line">    &#125; </span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure></p>
-<p>With the above example states you could access the data like this:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Ctrl(<span class="variable">$state</span>)&#123;</span><br><span class="line">    console.log(<span class="variable">$state</span>.current.data.customData1) // outputs <span class="number">5</span>;</span><br><span class="line">    console.log(<span class="variable">$state</span>.current.data.customData2) // outputs <span class="string">"blue"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/angular-ui/ui-router/wiki/Nested-States-%26-Nested-Views#inherited-custom-data" target="_blank" rel="external">Learn more</a> about how custom data properties are inherited down to child states.</p>
-<h2 id="onEnter_and_onExit_callbacks"><a href="#onEnter_and_onExit_callbacks" class="headerlink" title="onEnter and onExit callbacks"></a>onEnter and onExit callbacks</h2><p>state的激活和退出事件<br>There are also optional ‘onEnter’ and ‘onExit’ callbacks that get called when a state becomes active and inactive respectively. The callbacks also have access to all the resolved dependencies.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$stateProvider</span>.state(<span class="string">"contacts"</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;'</span>,</span><br><span class="line">  resolve: &#123; title: <span class="string">'My Contacts'</span> &#125;,</span><br><span class="line">  controller: <span class="keyword">function</span>(<span class="variable">$scope</span>, title)&#123;</span><br><span class="line">    <span class="variable">$scope</span>.title = title;</span><br><span class="line">  &#125;,</span><br><span class="line">  onEnter: <span class="keyword">function</span>(title)&#123;</span><br><span class="line">    <span class="keyword">if</span>(title)&#123; ... <span class="keyword">do</span> something ... &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  onExit: <span class="keyword">function</span>(title)&#123;</span><br><span class="line">    <span class="keyword">if</span>(title)&#123; ... <span class="keyword">do</span> something ... &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h2 id="State_Change_Events"><a href="#State_Change_Events" class="headerlink" title="State Change Events"></a>State Change Events</h2><p>All these events are fired at the $rootScope level.<br>$stateChangeStart - fired when the transition begins.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$rootScope</span>.<span class="variable">$on</span>(<span class="string">'$stateChangeStart'</span>, </span><br><span class="line"><span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123; ... &#125;)</span><br></pre></td></tr></table></figure></p>
-<p>Note: Use event.preventDefault() to prevent the transition from happening.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$rootScope</span>.<span class="variable">$on</span>(<span class="string">'$stateChangeStart'</span>, </span><br><span class="line"><span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123; </span><br><span class="line">    event.preventDefault(); </span><br><span class="line">    // transitionTo() promise will be rejected with </span><br><span class="line">    // a <span class="string">'transition prevented'</span> error</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>$stateNotFound - v0.3.0 - fired when a requested state cannot be found using the provided state name during transition. The event is broadcast allowing any handlers a single chance to deal with the error (usually by lazy-loading the unfound state). A specialunfoundState object is passed to the listener handler, you can see its three properties in the example. Use event.preventDefault() to abort the transition (transitionTo() promise will be rejected with a ‘transition aborted’ error). For a more in-depth example on lazy loading states, see How To: Lazy load states<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// somewhere, assume lazy.state has not been defined</span><br><span class="line"><span class="variable">$state</span>.go(<span class="string">"lazy.state"</span>, &#123;a:<span class="number">1</span>, b:<span class="number">2</span>&#125;, &#123;inherit:<span class="literal">false</span>&#125;);</span><br><span class="line"></span><br><span class="line">// somewhere <span class="keyword">else</span></span><br><span class="line"><span class="variable">$rootScope</span>.<span class="variable">$on</span>(<span class="string">'$stateNotFound'</span>, </span><br><span class="line"><span class="keyword">function</span>(event, unfoundState, fromState, fromParams)&#123; </span><br><span class="line">    console.log(unfoundState.to); // <span class="string">"lazy.state"</span></span><br><span class="line">    console.log(unfoundState.toParams); // &#123;a:<span class="number">1</span>, b:<span class="number">2</span>&#125;</span><br><span class="line">    console.log(unfoundState.options); // &#123;inherit:<span class="literal">false</span>&#125; + default options</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>$stateChangeSuccess - fired once the state transition is complete.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$rootScope</span>.<span class="variable">$on</span>(<span class="string">'$stateChangeSuccess'</span>, </span><br><span class="line"><span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123; ... &#125;)</span><br></pre></td></tr></table></figure></p>
-<p>$stateChangeError - fired when an error occurs during transition. It’s important to note that if you have any errors in your resolve functions (javascript errors, non-existent services, etc) they will not throw traditionally. You must listen for this $stateChangeError event to catch ALL errors. Use event.preventDefault() to prevent the $UrlRouter from reverting the URL to the previous valid location (in case of a URL navigation).<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$rootScope</span>.<span class="variable">$on</span>(<span class="string">'$stateChangeError'</span>, </span><br><span class="line"><span class="keyword">function</span>(event, toState, toParams, fromState, fromParams, error)&#123; ... &#125;)</span><br></pre></td></tr></table></figure></p>
-<h2 id="View_Load_Events"><a href="#View_Load_Events" class="headerlink" title="View Load Events"></a>View Load Events</h2><p>$viewContentLoading - fired once the view begins loading, before the DOM is rendered. The ‘$rootScope’ broadcasts the event.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$rootScope</span>.<span class="variable">$on</span>(<span class="string">'$viewContentLoading'</span>, </span><br><span class="line"><span class="keyword">function</span>(event, viewConfig)&#123; </span><br><span class="line">    // Access to all the view config properties.</span><br><span class="line">    // and one special property <span class="string">'targetView'</span></span><br><span class="line">    // viewConfig.targetView </span><br><span class="line">&#125;);</span><br><span class="line"><span class="variable">$viewContentLoaded</span> - fired once the view is loaded, after the DOM is rendered. The <span class="string">'$scope'</span> of the view emits the event.</span><br><span class="line"><span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'$viewContentLoaded'</span>, </span><br><span class="line"><span class="keyword">function</span>(event)&#123; ... &#125;);</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/21/AngularJS-Study-Note-1/" data-id="cil050y310000wev4pu0etvot" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -528,7 +511,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -537,7 +520,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 17.5px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12.5px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 15px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a>
+      <a href="/tags/AngularJS/" style="font-size: 14px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 18px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 14px;">maven</a> <a href="/tags/spring/" style="font-size: 16px;">spring</a>
     </div>
   </div>
 
@@ -546,7 +529,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -558,6 +541,14 @@
       <ul>
         
           <li>
+            <a href="/2016/02/25/load-resource-file-IOUtils/">load resource file [IOUtils]</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/25/load-resource-file-ClassPathResource/">load resource file [ClassPathResource]</a>
+          </li>
+        
+          <li>
             <a href="/2016/02/24/git-stash/">git stash</a>
           </li>
         
@@ -567,14 +558,6 @@
         
           <li>
             <a href="/2016/02/24/config-maven-with-multi-project/">config maven with multi-project</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/24/import-dependency/">import dependency</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/23/git-tag/">git tag</a>
           </li>
         
       </ul>

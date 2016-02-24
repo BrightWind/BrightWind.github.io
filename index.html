@@ -61,6 +61,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-load-resource-file-IOUtils" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/25/load-resource-file-IOUtils/" class="article-date">
+  <time datetime="2016-02-24T16:53:32.000Z" itemprop="datePublished">2016-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/25/load-resource-file-IOUtils/">load resource file [IOUtils]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h3><dependency><br>      <groupid>org.apache.commons</groupid><br>      <artifactid>commons-io</artifactid><br>      <version>1.3.2</version><br>    </dependency>
+
+<h3 id="u65B9_u6CD51"><a href="#u65B9_u6CD51" class="headerlink" title="方法1"></a>方法1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//load file from classpath(resource path)</span><br><span class="line">InputStream is = getClass().getResourceAsStream(<span class="string">"/aaa.rule.properties"</span>);</span><br><span class="line">String st=IOUtils.toString(is);</span><br></pre></td></tr></table></figure>
+<h3 id="u65B9_u6CD52"><a href="#u65B9_u6CD52" class="headerlink" title="方法2"></a>方法2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#servlet</span></span><br><span class="line">    &lt;bean id=<span class="string">"contents2"</span> class=<span class="string">"org.apache.commons.io.IOUtils"</span> factory-method=<span class="string">"toString"</span>&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"classpath:aaa.rule.properties"</span> <span class="built_in">type</span>=<span class="string">"java.io.InputStream"</span> /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#controler</span></span><br><span class="line">    @Autowired</span><br><span class="line">    private String contents2;</span><br><span class="line"></span><br><span class="line">@RequestMapping(<span class="string">"/index"</span>)</span><br><span class="line">    public void helloWorld(ModelMap model) &#123;</span><br><span class="line">        	System.out.println(contents2);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/25/load-resource-file-IOUtils/" data-id="cil13dfia000cg3v46amkbyqx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-load-resource-file-ClassPathResource" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/25/load-resource-file-ClassPathResource/" class="article-date">
+  <time datetime="2016-02-24T16:32:07.000Z" itemprop="datePublished">2016-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/25/load-resource-file-ClassPathResource/">load resource file [ClassPathResource]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="xx-servlet-xml"><a href="#xx-servlet-xml" class="headerlink" title="xx-servlet.xml"></a>xx-servlet.xml</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"contents"</span> class=<span class="string">"org.springframework.core.io.ClassPathResource"</span>&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"aaa.rule.properties"</span>/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="controler"><a href="#controler" class="headerlink" title="controler"></a>controler</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">    private Resource contents;</span><br><span class="line"></span><br><span class="line">    @PostConstruct</span><br><span class="line">    public void <span class="function"><span class="title">load</span></span>()&#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            System.out.println(<span class="string">"step 0"</span>);</span><br><span class="line"></span><br><span class="line">            final InputStream inputStream = contents.getInputStream();</span><br><span class="line">            //use the stream</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"step 1"</span>);</span><br><span class="line"></span><br><span class="line">            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"step 2"</span>);</span><br><span class="line">            StringBuilder stringBuilder = new StringBuilder();</span><br><span class="line">            String line;</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"step 3"</span>);</span><br><span class="line">            <span class="keyword">while</span> ((line = br.readLine()) != null) &#123;</span><br><span class="line">                stringBuilder.append(line).append(<span class="string">'\n'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            br.close();</span><br><span class="line"></span><br><span class="line">            System.out.println(stringBuilder.toString());</span><br><span class="line">        &#125;catch (IOException e) &#123;</span><br><span class="line">            System.out.println(e.toString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/25/load-resource-file-ClassPathResource/" data-id="cil13dfid000eg3v4960roc8e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-git-stash" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/24/git-stash/" class="article-date">
@@ -88,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/git-stash/" data-id="cil050y3s000nwev43gr7e6p4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/git-stash/" data-id="cil13dfio000rg3v47se6lt4s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -127,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/git-help/" data-id="cil050y3t000pwev42m2gjq9r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/git-help/" data-id="cil13dfiq000tg3v4o0w5k3u0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -164,14 +246,14 @@
         <p><a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html" target="_blank" rel="external">官方文档</a><br>maven子项目pom.xml会继承父项目的公共模块，如</p>
 <p><dependencymanagement>、<dependencys>、<plugins> and <properties><br>dependencyManagment定义模块的默认版本<br>denpendencys定义当前使用的版本<br>properties定义pom.xml中的公共属性（变量）<br>plugins定义工程需要使用的一些工具</properties></plugins></dependencys></dependencymanagement></p>
 <p>配置多工程的maven项目</p>
-<p>#pom.xml in parent<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;project&gt;</span><br><span class="line"> &lt;modelVersion&gt;<span class="number">4.0</span>.<span class="number">0</span>&lt;/modelVersion&gt;</span><br><span class="line"> &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;parent&lt;/artifactId&gt;</span><br><span class="line"> &lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line"> &lt;name&gt;parent&lt;/name&gt;</span><br><span class="line"> &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line">	</span><br><span class="line">&lt;!--包含的子模块--&gt;</span><br><span class="line">&lt;modules&gt;</span><br><span class="line">	&lt;module&gt;module1&lt;/module&gt;</span><br><span class="line">	&lt;module&gt;module2&lt;/module&gt;</span><br><span class="line">&lt;/modules&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--配置通用属性--&gt;</span><br><span class="line"> &lt;properties&gt;</span><br><span class="line">	&lt;variable&gt;version1&lt;/variable&gt;</span><br><span class="line"> &lt;/properties&gt; </span><br><span class="line"></span><br><span class="line"> &lt;!-- 定义默认的模块版本--&gt;</span><br><span class="line"> &lt;dependencyManagement&gt;</span><br><span class="line">   &lt;dependencies&gt;</span><br><span class="line">     &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;<span class="built_in">test</span>&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;d&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;<span class="number">1.2</span>&lt;/version&gt;</span><br><span class="line">     &lt;/dependency&gt;</span><br><span class="line">   &lt;/dependencies&gt;</span><br><span class="line"> &lt;/dependencyManagement&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &lt;!-- 配置公共依赖--&gt;</span><br><span class="line"> &lt;dependencies&gt;</span><br><span class="line">     &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;<span class="built_in">test</span>&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;d&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;<span class="number">1.2</span>&lt;/version&gt;</span><br><span class="line">     &lt;/dependency&gt;</span><br><span class="line"> &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">&lt;!-- 配置公共的工具--&gt;</span><br><span class="line">  &lt;build&gt;</span><br><span class="line">	 &lt;plugins&gt;</span><br><span class="line">		&lt;plugin&gt;</span><br><span class="line">		 ...</span><br><span class="line">		&lt;/plugin&gt;</span><br><span class="line">	 &lt;/plugins&gt;</span><br><span class="line"> &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="u914D_u7F6E_u6A21_u57571pom-xml"><a href="#u914D_u7F6E_u6A21_u57571pom-xml" class="headerlink" title="配置模块1pom.xml"></a>配置模块1pom.xml</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;project&gt;</span><br><span class="line"> &lt;modelVersion&gt;<span class="number">4.0</span>.<span class="number">0</span>&lt;/modelVersion&gt;</span><br><span class="line"> &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;module1&lt;/artifactId&gt;</span><br><span class="line"> &lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line"> &lt;name&gt;module1&lt;/name&gt;</span><br><span class="line"> &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--包含的子模块--&gt;</span><br><span class="line">&lt;modules&gt;</span><br><span class="line">        &lt;module&gt;./module2&lt;/module&gt;</span><br><span class="line">&lt;/modules&gt;</span><br><span class="line"> </span><br><span class="line">&lt;!--配置父模块，获得信息继承--&gt;</span><br><span class="line">  &lt;parent&gt;</span><br><span class="line">    &lt;artifactId&gt;parent&lt;/artifactId&gt;</span><br><span class="line">    &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line">  &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line"> &lt;!-- 模块特有依赖--&gt;</span><br><span class="line"> &lt;dependencies&gt;</span><br><span class="line">     &lt;!--配置对模块<span class="number">2</span>依赖关系--&gt;</span><br><span class="line">	 &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;module2&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;<span class="number">1.2</span>&lt;/version&gt;</span><br><span class="line"> &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="u914D_u7F6E_u6A21_u57572pom-xml"><a href="#u914D_u7F6E_u6A21_u57572pom-xml" class="headerlink" title="配置模块2pom.xml"></a>配置模块2pom.xml</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;project&gt;</span><br><span class="line"> &lt;modelVersion&gt;<span class="number">4.0</span>.<span class="number">0</span>&lt;/modelVersion&gt;</span><br><span class="line"> &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;module2&lt;/artifactId&gt;</span><br><span class="line"> &lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line"> &lt;name&gt;module2&lt;/name&gt;</span><br><span class="line"> &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--配置父模块，获得信息继承,不能从module1继承，否则会继承对自己依赖，造成循环以来链--&gt;</span><br><span class="line">  &lt;parent&gt;</span><br><span class="line">    &lt;artifactId&gt;parent&lt;/artifactId&gt;</span><br><span class="line">    &lt;groupId&gt;maven&lt;/groupId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">1.0</span>&lt;/version&gt;</span><br><span class="line">  &lt;/parent&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<p>#pom.xml in parent<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">        xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span>&gt;</span><br><span class="line"></span><br><span class="line">   &lt;artifactId&gt;top-module&lt;/artifactId&gt;</span><br><span class="line">   &lt;groupId&gt;com.custom.project&lt;/groupId&gt;</span><br><span class="line">   &lt;version&gt;<span class="number">1.0</span>-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">   &lt;modelVersion&gt;<span class="number">4.0</span>.<span class="number">0</span>&lt;/modelVersion&gt;</span><br><span class="line">   &lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">   &lt;modules&gt;</span><br><span class="line">       &lt;module&gt;module2&lt;/module&gt;</span><br><span class="line">       &lt;module&gt;module1&lt;/module&gt;</span><br><span class="line">   &lt;/modules&gt;</span><br><span class="line"></span><br><span class="line">   &lt;properties&gt;</span><br><span class="line">       &lt;spring.version&gt;<span class="number">4.2</span>.<span class="number">4</span>.RELEASE&lt;/spring.version&gt;</span><br><span class="line">       &lt;project.build.sourceEncoding&gt;UTF-<span class="number">8</span>&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">       &lt;project.reporting.outputEncoding&gt;UTF-<span class="number">8</span>&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">       &lt;json-simple.version&gt;<span class="number">1.1</span>&lt;/json-simple.version&gt;</span><br><span class="line">   &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">   &lt;dependencyManagement&gt;</span><br><span class="line">       &lt;dependencies&gt;</span><br><span class="line">           &lt;dependency&gt;</span><br><span class="line">               &lt;groupId&gt;com.custom.project&lt;/groupId&gt;</span><br><span class="line">               &lt;artifactId&gt;module2&lt;/artifactId&gt;</span><br><span class="line">               &lt;version&gt;<span class="number">1.0</span>-SNAPSHOT&lt;/version&gt;</span><br><span class="line">           &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">           &lt;dependency&gt;</span><br><span class="line">               &lt;groupId&gt;com.custom.project&lt;/groupId&gt;</span><br><span class="line">               &lt;artifactId&gt;module1&lt;/artifactId&gt;</span><br><span class="line">               &lt;version&gt;<span class="number">1.0</span>-SNAPSHOT&lt;/version&gt;</span><br><span class="line">           &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">          &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;com.googlecode.json-simple&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;json-simple&lt;/artifactId&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="variable">$&#123;spring.version&#125;</span>&lt;/version&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line">       &lt;/dependencies&gt;</span><br><span class="line">   &lt;/dependencyManagement&gt;</span><br><span class="line"></span><br><span class="line">   &lt;build&gt;</span><br><span class="line">           &lt;plugins&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;</span><br><span class="line">                   &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;<span class="number">9.2</span>.<span class="number">6</span>.v20141205&lt;/version&gt;</span><br><span class="line">                   &lt;configuration&gt;</span><br><span class="line">                       &lt;systemProperties&gt;</span><br><span class="line">                           &lt;systemProperty&gt;</span><br><span class="line">                               &lt;name&gt;jetty.base1&lt;/name&gt;</span><br><span class="line">                               &lt;value&gt;jetty.base-value1&lt;/value&gt;</span><br><span class="line">                           &lt;/systemProperty&gt;</span><br><span class="line">                       &lt;/systemProperties&gt;</span><br><span class="line">                       &lt;scanIntervalSeconds&gt;<span class="number">2</span>&lt;/scanIntervalSeconds&gt;</span><br><span class="line">                       &lt;httpConnector&gt;</span><br><span class="line">                           &lt;host&gt;<span class="number">0.0</span>.<span class="number">0.0</span>&lt;/host&gt;</span><br><span class="line">                       &lt;/httpConnector&gt;</span><br><span class="line">                   &lt;/configuration&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;<span class="number">3.0</span>&lt;/version&gt;</span><br><span class="line">                   &lt;configuration&gt;</span><br><span class="line">                       &lt;<span class="built_in">source</span>&gt;<span class="number">1.7</span>&lt;/<span class="built_in">source</span>&gt;</span><br><span class="line">                       &lt;target&gt;<span class="number">1.7</span>&lt;/target&gt;</span><br><span class="line">                   &lt;/configuration&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;<span class="number">2.19</span>.<span class="number">1</span>&lt;/version&gt;</span><br><span class="line">                   &lt;configuration&gt;</span><br><span class="line">                       &lt;includes&gt;</span><br><span class="line">                           &lt;include&gt;**/*Tests.java&lt;/include&gt;</span><br><span class="line">                       &lt;/includes&gt;</span><br><span class="line">                   &lt;/configuration&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">           &lt;/plugins&gt;</span><br><span class="line">   &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">   &lt;dependencies&gt;</span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;com.googlecode.json-simple&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;json-simple&lt;/artifactId&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="variable">$&#123;spring.version&#125;</span>&lt;/version&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line">   &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u914D_u7F6E_u6A21_u57571pom-xml"><a href="#u914D_u7F6E_u6A21_u57571pom-xml" class="headerlink" title="配置模块1pom.xml"></a>配置模块1pom.xml</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">        xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span>&gt;</span><br><span class="line">   &lt;modelVersion&gt;<span class="number">4.0</span>.<span class="number">0</span>&lt;/modelVersion&gt;</span><br><span class="line">   &lt;groupId&gt;com.custom.project&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;module1&lt;/artifactId&gt;</span><br><span class="line">   &lt;packaging&gt;war&lt;/packaging&gt;</span><br><span class="line">   &lt;version&gt;<span class="number">1.0</span>-SNAPSHOT&lt;/version&gt;</span><br><span class="line">   &lt;name&gt;module1&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">   &lt;parent&gt;</span><br><span class="line">       &lt;artifactId&gt;top-module&lt;/artifactId&gt;</span><br><span class="line">       &lt;groupId&gt;com.custom.project&lt;/groupId&gt;</span><br><span class="line">       &lt;version&gt;<span class="number">1.0</span>-SNAPSHOT&lt;/version&gt;</span><br><span class="line">   &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">   &lt;dependencies&gt;</span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;com.custom.project&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;module2&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="number">1.0</span>-SNAPSHOT&lt;/version&gt;</span><br><span class="line">           &lt;scope&gt;system&lt;/scope&gt;</span><br><span class="line">           &lt;systemPath&gt;<span class="variable">$&#123;basedir&#125;</span>/../module2/target/module2.jar&lt;/systemPath&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;spring-core&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="variable">$&#123;spring.version&#125;</span>&lt;/version&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;spring-web&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="variable">$&#123;spring.version&#125;</span>&lt;/version&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line">   &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">   &lt;build&gt;</span><br><span class="line">       &lt;finalName&gt;top-module-core&lt;/finalName&gt;</span><br><span class="line">       &lt;plugins&gt;</span><br><span class="line">           &lt;plugin&gt;</span><br><span class="line">               &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;</span><br><span class="line">               &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">               &lt;version&gt;<span class="number">9.2</span>.<span class="number">6</span>.v20141205&lt;/version&gt;</span><br><span class="line">               &lt;configuration&gt;</span><br><span class="line">                   &lt;systemProperties&gt;</span><br><span class="line">                       &lt;systemProperty&gt;</span><br><span class="line">                           &lt;name&gt;jetty.base1&lt;/name&gt;</span><br><span class="line">                           &lt;value&gt;jetty.base-value1&lt;/value&gt;</span><br><span class="line">                       &lt;/systemProperty&gt;</span><br><span class="line">                   &lt;/systemProperties&gt;</span><br><span class="line">                   &lt;scanIntervalSeconds&gt;<span class="number">2</span>&lt;/scanIntervalSeconds&gt;</span><br><span class="line">                   &lt;httpConnector&gt;</span><br><span class="line">                       &lt;host&gt;<span class="number">0.0</span>.<span class="number">0.0</span>&lt;/host&gt;</span><br><span class="line">                   &lt;/httpConnector&gt;</span><br><span class="line">               &lt;/configuration&gt;</span><br><span class="line">           &lt;/plugin&gt;</span><br><span class="line">           &lt;plugin&gt;</span><br><span class="line">               &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">               &lt;version&gt;<span class="number">3.0</span>&lt;/version&gt;</span><br><span class="line">               &lt;configuration&gt;</span><br><span class="line">                   &lt;<span class="built_in">source</span>&gt;<span class="number">1.7</span>&lt;/<span class="built_in">source</span>&gt;</span><br><span class="line">                   &lt;target&gt;<span class="number">1.7</span>&lt;/target&gt;</span><br><span class="line">               &lt;/configuration&gt;</span><br><span class="line">           &lt;/plugin&gt;</span><br><span class="line">           &lt;plugin&gt;</span><br><span class="line">               &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span><br><span class="line">               &lt;version&gt;<span class="number">2.19</span>.<span class="number">1</span>&lt;/version&gt;</span><br><span class="line">               &lt;configuration&gt;</span><br><span class="line">                   &lt;includes&gt;</span><br><span class="line">                       &lt;include&gt;**/*Tests.java&lt;/include&gt;</span><br><span class="line">                   &lt;/includes&gt;</span><br><span class="line">               &lt;/configuration&gt;</span><br><span class="line">           &lt;/plugin&gt;</span><br><span class="line">       &lt;/plugins&gt;</span><br><span class="line">   &lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="u914D_u7F6E_u6A21_u57572pom-xml"><a href="#u914D_u7F6E_u6A21_u57572pom-xml" class="headerlink" title="配置模块2pom.xml"></a>配置模块2pom.xml</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span><br><span class="line">        xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">        xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span><br><span class="line"></span><br><span class="line">   &lt;groupId&gt;com.custom.project&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;module2&lt;/artifactId&gt;</span><br><span class="line">   &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">   &lt;modelVersion&gt;<span class="number">4.0</span>.<span class="number">0</span>&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">   &lt;parent&gt;</span><br><span class="line">       &lt;artifactId&gt;top-module&lt;/artifactId&gt;</span><br><span class="line">       &lt;groupId&gt;com.custom.project&lt;/groupId&gt;</span><br><span class="line">       &lt;version&gt;<span class="number">1.0</span>-SNAPSHOT&lt;/version&gt;</span><br><span class="line">   &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">   &lt;build&gt;</span><br><span class="line">       &lt;defaultGoal&gt;shade&lt;/defaultGoal&gt;</span><br><span class="line">       &lt;directory&gt;<span class="variable">$&#123;basedir&#125;</span>/target&lt;/directory&gt;</span><br><span class="line">       &lt;finalName&gt;<span class="variable">$&#123;artifactId&#125;</span>&lt;/finalName&gt;</span><br><span class="line">   &lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/config-maven-with-multi-project/" data-id="cil050y3y000vwev4dndni3v9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/config-maven-with-multi-project/" data-id="cil13dfiv000zg3v4m8l4x6z9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
@@ -212,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/import-dependency/" data-id="cil050y3n000fwev402t4jvts" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/import-dependency/" data-id="cil13dfig000jg3v4nd65es5c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
@@ -254,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/23/git-tag/" data-id="cil050y3q000kwev47xmkvk5j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/23/git-tag/" data-id="cil13dfil000og3v4kofan293" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -296,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/22/ubuntu-turn-on-workspace/" data-id="cil050y3i0006wev4k7hyvv5n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/22/ubuntu-turn-on-workspace/" data-id="cil13dfi50006g3v43vm7bkba" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-os/">linux os</a></li></ul>
@@ -341,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/add-maven-repository/" data-id="cil050y3z000xwev42qct4yah" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/add-maven-repository/" data-id="cil13dfix0011g3v4puii1xsc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
@@ -379,92 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="cil050y3k0009wev4lnstkjyr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Idea-Intellj-Q-A" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/21/Idea-Intellj-Q-A/" class="article-date">
-  <time datetime="2016-02-21T15:49:15.000Z" itemprop="datePublished">2016-02-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/21/Idea-Intellj-Q-A/">Idea Intellj Q&amp;A</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="mark_as_directory_uFF08_u76EE_u5F55_u53F3_u952E_u83DC_u5355_uFF09"><a href="#mark_as_directory_uFF08_u76EE_u5F55_u53F3_u952E_u83DC_u5355_uFF09" class="headerlink" title="mark as directory（目录右键菜单）"></a>mark as directory（目录右键菜单）</h3><p>exclude<br>不包含目录，此时目录被标记为空心红框，该目录下的文件不被检测，右键新建文件时，找不到java class<br>cancel exclusion<br>取消不包含</p>
-<p>通常，src/main/java被标记为根目录，其下的目录只有exclude和cancel exclusion,右键菜单，设置和取消根目录<br>mark as source root<br>unmark as source root</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/Idea-Intellj-Q-A/" data-id="cil050y50001uwev4bo9i2u67" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-create-maven-spring-mvc-from-archetypes" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/21/create-maven-spring-mvc-from-archetypes/" class="article-date">
-  <time datetime="2016-02-21T15:36:15.000Z" itemprop="datePublished">2016-02-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/21/create-maven-spring-mvc-from-archetypes/">create maven-spring-mvc from archetypes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1__5B_u5B89_u88C5_u6A21_u677F_u4ED3_u5E93_u5230_u672C_u5730_u4ED3_u5E93_5D"><a href="#1__5B_u5B89_u88C5_u6A21_u677F_u4ED3_u5E93_u5230_u672C_u5730_u4ED3_u5E93_5D" class="headerlink" title="1 [安装模板仓库到本地仓库]"></a>1 [安装模板仓库到本地仓库]</h3><p>git clone <a href="https://github.com/kolorobot/spring-mvc-quickstart-archetype.git" target="_blank" rel="external">https://github.com/kolorobot/spring-mvc-quickstart-archetype.git</a><br>cd spring-mvc-quickstart-archetype<br>mvn clean install</p>
-<h3 id="2__u521B_u5EFA_u9879_u76EE"><a href="#2__u521B_u5EFA_u9879_u76EE" class="headerlink" title="2 创建项目"></a>2 创建项目</h3><p>（1）使用命令从仓库模板创建项目<br>mvn archetype:generate \<br>        -DarchetypeGroupId=com.github.spring-mvc-archetypes \<br>        -DarchetypeArtifactId=spring-mvc-quickstart \<br>        -DarchetypeVersion=1.0.0 \<br>        -DgroupId=my.groupid \<br>        -DartifactId=my-artifactId \<br>        -Dversion=version</p>
-<p>（2）使用Idea Intellj从仓库模板创建项目<br>New Project-&gt;Maven-&gt;Create From archetypes-&gt;add archetypes<br>填写模板归档类型，项目名，版本（可能会有多个版本，添加时注意不要有空格）<br>GroupId=com.github.spring-mvc-archetypes<br>ArtifactId=spring-mvc-quickstart<br>Version=1.0.0<br>-&gt;Next-&gt;<br>填写项目的归档类型，项目名，版本<br>GroupId=myarchetype<br>ArtifactId=spring-mvc-quickstart<br>Version=1.0.0<br>-&gt;finish （从仓库拷贝相应文件及下载依赖）</p>
-<h3 id="u8FD0_u884C_u9879_u76EE"><a href="#u8FD0_u884C_u9879_u76EE" class="headerlink" title="运行项目"></a>运行项目</h3><p>在pom.xml配置运行容器插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加tomcat 和 jetty运行容器</span></span><br><span class="line">&lt;build&gt;</span><br><span class="line">   &lt;plugins&gt;</span><br><span class="line">       &lt;plugin&gt;</span><br><span class="line">           &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="number">2.2</span>&lt;/version&gt;</span><br><span class="line">           &lt;configuration&gt;</span><br><span class="line">               &lt;path&gt;/&lt;/path&gt;</span><br><span class="line">           &lt;/configuration&gt;</span><br><span class="line">       &lt;/plugin&gt;</span><br><span class="line">       &lt;plugin&gt;</span><br><span class="line">           &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;<span class="number">9.2</span>.<span class="number">6</span>.v20141205&lt;/version&gt;</span><br><span class="line">           &lt;configuration&gt;</span><br><span class="line">               &lt;systemProperties&gt;</span><br><span class="line">                   &lt;systemProperty&gt;</span><br><span class="line">                       &lt;name&gt;jetty.base1&lt;/name&gt;</span><br><span class="line">                       &lt;value&gt;jetty.base-value1&lt;/value&gt;</span><br><span class="line">                   &lt;/systemProperty&gt;</span><br><span class="line">               &lt;/systemProperties&gt;</span><br><span class="line">               &lt;scanIntervalSeconds&gt;<span class="number">2</span>&lt;/scanIntervalSeconds&gt;</span><br><span class="line">               &lt;httpConnector&gt;</span><br><span class="line">                   &lt;host&gt;<span class="number">0.0</span>.<span class="number">0.0</span>&lt;/host&gt;</span><br><span class="line">               &lt;/httpConnector&gt;</span><br><span class="line">           &lt;/configuration&gt;</span><br><span class="line">       &lt;/plugin&gt;</span><br><span class="line">   &lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
-<p>（1）通过mvn命令行运行</p>
-<p>mvn test tomcat7:run<br>mvn test jetty:run</p>
-<p>（2） 通过配置Idea 容器运行<br>Idea 右上角运行配置-&gt;Edit Configration-&gt;+ maven -&gt;<br>添加命令(分别可以使用tomcat 或jetty运行)<br>tomcat7:run<br>jetty:run</p>
-<h3 id="u5728_u6D4F_u89C8_u5668_u4E2D_u67E5_u770B_u7F51_u9875"><a href="#u5728_u6D4F_u89C8_u5668_u4E2D_u67E5_u770B_u7F51_u9875" class="headerlink" title="在浏览器中查看网页"></a>在浏览器中查看网页</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/" data-id="cil050y3w000twev4e4valzn2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="cil13dfi80009g3v4nkx4ya56" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -478,7 +475,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -491,7 +488,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -500,7 +497,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 17.5px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12.5px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 15px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a>
+      <a href="/tags/AngularJS/" style="font-size: 14px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 18px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 14px;">maven</a> <a href="/tags/spring/" style="font-size: 16px;">spring</a>
     </div>
   </div>
 
@@ -509,7 +506,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -521,6 +518,14 @@
       <ul>
         
           <li>
+            <a href="/2016/02/25/load-resource-file-IOUtils/">load resource file [IOUtils]</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/25/load-resource-file-ClassPathResource/">load resource file [ClassPathResource]</a>
+          </li>
+        
+          <li>
             <a href="/2016/02/24/git-stash/">git stash</a>
           </li>
         
@@ -530,14 +535,6 @@
         
           <li>
             <a href="/2016/02/24/config-maven-with-multi-project/">config maven with multi-project</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/24/import-dependency/">import dependency</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/23/git-tag/">git tag</a>
           </li>
         
       </ul>
