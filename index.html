@@ -83,15 +83,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h3><dependency><br>      <groupid>org.apache.commons</groupid><br>      <artifactid>commons-io</artifactid><br>      <version>1.3.2</version><br>    </dependency>
-
+        <h3 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;commons-io&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;<span class="number">1.3</span>.<span class="number">2</span>&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="u65B9_u6CD51"><a href="#u65B9_u6CD51" class="headerlink" title="方法1"></a>方法1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//load file from classpath(resource path)</span><br><span class="line">InputStream is = getClass().getResourceAsStream(<span class="string">"/aaa.rule.properties"</span>);</span><br><span class="line">String st=IOUtils.toString(is);</span><br></pre></td></tr></table></figure>
 <h3 id="u65B9_u6CD52"><a href="#u65B9_u6CD52" class="headerlink" title="方法2"></a>方法2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#servlet</span></span><br><span class="line">    &lt;bean id=<span class="string">"contents2"</span> class=<span class="string">"org.apache.commons.io.IOUtils"</span> factory-method=<span class="string">"toString"</span>&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"classpath:aaa.rule.properties"</span> <span class="built_in">type</span>=<span class="string">"java.io.InputStream"</span> /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#controler</span></span><br><span class="line">    @Autowired</span><br><span class="line">    private String contents2;</span><br><span class="line"></span><br><span class="line">@RequestMapping(<span class="string">"/index"</span>)</span><br><span class="line">    public void helloWorld(ModelMap model) &#123;</span><br><span class="line">        	System.out.println(contents2);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/25/load-resource-file-IOUtils/" data-id="cil13dfia000cg3v46amkbyqx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/25/load-resource-file-IOUtils/" data-id="cil13feuu000chgv4tpu1o1n7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -131,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/25/load-resource-file-ClassPathResource/" data-id="cil13dfid000eg3v4960roc8e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/25/load-resource-file-ClassPathResource/" data-id="cil13feuw000ehgv48a4nff40" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -170,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/git-stash/" data-id="cil13dfio000rg3v47se6lt4s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/git-stash/" data-id="cil13fev5000rhgv4tf8134qp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -209,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/git-help/" data-id="cil13dfiq000tg3v4o0w5k3u0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/git-help/" data-id="cil13fev6000thgv4ys3axnvd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -253,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/config-maven-with-multi-project/" data-id="cil13dfiv000zg3v4m8l4x6z9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/config-maven-with-multi-project/" data-id="cil13fevb000zhgv4nalx8dtb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
@@ -294,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/24/import-dependency/" data-id="cil13dfig000jg3v4nd65es5c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/24/import-dependency/" data-id="cil13fev0000jhgv48adk76xn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
@@ -336,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/23/git-tag/" data-id="cil13dfil000og3v4kofan293" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/23/git-tag/" data-id="cil13fev3000ohgv4ua6mb1zs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -378,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/22/ubuntu-turn-on-workspace/" data-id="cil13dfi50006g3v43vm7bkba" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/22/ubuntu-turn-on-workspace/" data-id="cil13feuq0006hgv4v05k2io1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-os/">linux os</a></li></ul>
@@ -423,7 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/add-maven-repository/" data-id="cil13dfix0011g3v4puii1xsc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/add-maven-repository/" data-id="cil13fevd0011hgv4wp76oe31" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
@@ -461,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="cil13dfi80009g3v4nkx4ya56" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="cil13feus0009hgv442rx3vnu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
