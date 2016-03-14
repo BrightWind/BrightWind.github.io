@@ -61,6 +61,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-add-maven-repository" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/21/add-maven-repository/" class="article-date">
+  <time datetime="2016-02-21T15:53:44.000Z" itemprop="datePublished">2016-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/21/add-maven-repository/">add maven repository</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="u6982_u8FF0"><a href="#u6982_u8FF0" class="headerlink" title="概述"></a>概述</h3><p>mavent在本地存在一个库仓库，maven在解决pom.xml依赖关系时，会优先在本地仓库查找，如果找不到，会从maven默认仓库查找</p>
+<h3 id="u67E5_u770B_u672C_u5730_u4ED3_u5E93_uFF08com/thoughtworks/xstream_u9879_u76EE_uFF09"><a href="#u67E5_u770B_u672C_u5730_u4ED3_u5E93_uFF08com/thoughtworks/xstream_u9879_u76EE_uFF09" class="headerlink" title="查看本地仓库（com/thoughtworks/xstream项目）"></a>查看本地仓库（com/thoughtworks/xstream项目）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">user@user-H81M-DS2:~/.m2/repository/com/thoughtworks/xstream$ ls -R xstream</span><br><span class="line">xstream:</span><br><span class="line"><span class="number">1.3</span>.<span class="number">1</span>  <span class="number">1.4</span>.<span class="number">2</span>  <span class="number">1.4</span>.<span class="number">7</span></span><br><span class="line"></span><br><span class="line">xstream/<span class="number">1.3</span>.<span class="number">1</span>:</span><br><span class="line">_maven.repositories  xstream-<span class="number">1.3</span>.<span class="number">1</span>.jar.sha1  xstream-<span class="number">1.3</span>.<span class="number">1</span>.pom.sha1</span><br><span class="line">xstream-<span class="number">1.3</span>.<span class="number">1</span>.jar    xstream-<span class="number">1.3</span>.<span class="number">1</span>.pom</span><br><span class="line"></span><br><span class="line">xstream/<span class="number">1.4</span>.<span class="number">2</span>:</span><br><span class="line">_maven.repositories  xstream-<span class="number">1.4</span>.<span class="number">2</span>.jar.sha1  xstream-<span class="number">1.4</span>.<span class="number">2</span>.pom.sha1</span><br><span class="line">xstream-<span class="number">1.4</span>.<span class="number">2</span>.jar    xstream-<span class="number">1.4</span>.<span class="number">2</span>.pom</span><br><span class="line"></span><br><span class="line">xstream/<span class="number">1.4</span>.<span class="number">7</span>:</span><br><span class="line">_maven.repositories  xstream-<span class="number">1.4</span>.<span class="number">7</span>.jar.sha1  xstream-<span class="number">1.4</span>.<span class="number">7</span>.pom.sha1</span><br><span class="line">xstream-<span class="number">1.4</span>.<span class="number">7</span>.jar    xstream-<span class="number">1.4</span>.<span class="number">7</span>.pom</span><br></pre></td></tr></table></figure>
+<h3 id="u8FDC_u7A0B_u4ED3_u5E93"><a href="#u8FDC_u7A0B_u4ED3_u5E93" class="headerlink" title="远程仓库"></a>远程仓库</h3><p>官方仓库<br><a href="http://repo.maven.apache.org/maven2/" target="_blank" rel="external">http://repo.maven.apache.org/maven2/</a><br>其他仓库包查找<br><a href="http://search.maven.org/" target="_blank" rel="external">http://search.maven.org/</a></p>
+<h3 id="maven_u5730_u5740_u89E3_u6790_u65B9_u5F0F"><a href="#maven_u5730_u5740_u89E3_u6790_u65B9_u5F0F" class="headerlink" title="maven地址解析方式"></a>maven地址解析方式</h3><p>repository/groupid/artifactid/version/…</p>
+<h3 id="u67E5_u770Bmaven_u914D_u7F6E"><a href="#u67E5_u770Bmaven_u914D_u7F6E" class="headerlink" title="查看maven配置"></a>查看maven配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">user@user-H81M-DS2:~/.m2/repository$ whereis maven</span><br><span class="line">maven: /etc/maven /usr/share/maven</span><br><span class="line">user@user-H81M-DS2:~/.m2/repository$ <span class="built_in">cd</span> /etc/maven/</span><br><span class="line">user@user-H81M-DS2:/etc/maven$ ll</span><br><span class="line">total <span class="number">32</span></span><br><span class="line">drwxr-xr-x   <span class="number">2</span> root root  <span class="number">4096</span>  <span class="number">1</span>月 <span class="number">26</span> <span class="number">11</span>:<span class="number">26</span> ./</span><br><span class="line">drwxr-xr-x <span class="number">150</span> root root <span class="number">12288</span>  <span class="number">2</span>月 <span class="number">18</span> <span class="number">08</span>:<span class="number">59</span> ../</span><br><span class="line">-rw-r--r--   <span class="number">1</span> root root   <span class="number">184</span> <span class="number">10</span>月 <span class="number">21</span>  <span class="number">2013</span> m2.conf</span><br><span class="line">-rw-r--r--   <span class="number">1</span> root root <span class="number">10224</span> <span class="number">10</span>月 <span class="number">21</span>  <span class="number">2013</span> settings.xml</span><br></pre></td></tr></table></figure>
+<h3 id="u5728setting-xml_u6DFB_u52A0maven_u4ED3_u5E93"><a href="#u5728setting-xml_u6DFB_u52A0maven_u4ED3_u5E93" class="headerlink" title="在setting.xml添加maven仓库"></a>在setting.xml添加maven仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># （1）添加仓库配置</span></span><br><span class="line">&lt;profiles&gt;</span><br><span class="line">  ...</span><br><span class="line">  &lt;profile&gt;</span><br><span class="line">    &lt;id&gt;myprofile&lt;/id&gt;</span><br><span class="line">    &lt;repositories&gt;</span><br><span class="line">      &lt;repository&gt;</span><br><span class="line">        &lt;id&gt;my-repo2&lt;/id&gt;</span><br><span class="line">        &lt;name&gt;your custom repo&lt;/name&gt;</span><br><span class="line">        &lt;url&gt;http://jarsm2.dyndns.dk&lt;/url&gt;</span><br><span class="line">      &lt;/repository&gt;</span><br><span class="line">    &lt;/repositories&gt;</span><br><span class="line">  &lt;/profile&gt;</span><br><span class="line">  ...</span><br><span class="line">&lt;/profiles&gt;</span><br><span class="line"> </span><br><span class="line"><span class="comment"># （2） 激活配置</span></span><br><span class="line">&lt;activeProfiles&gt;</span><br><span class="line">  &lt;activeProfile&gt;myprofile&lt;/activeProfile&gt;</span><br><span class="line">&lt;/activeProfiles&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># (3) 通过命令行也可以激活配置</span></span><br><span class="line">mvn -Pmyprofile profile1 profile2</span><br></pre></td></tr></table></figure>
+<h3 id="u5728pom-xml_u4E2D_u6DFB_u52A0repository"><a href="#u5728pom-xml_u4E2D_u6DFB_u52A0repository" class="headerlink" title="在pom.xml中添加repository"></a>在pom.xml中添加repository</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;project&gt;</span><br><span class="line">...</span><br><span class="line"> &lt;repositories&gt;</span><br><span class="line">   &lt;repository&gt;</span><br><span class="line">     &lt;id&gt;my-repo1&lt;/id&gt;</span><br><span class="line">     &lt;name&gt;your custom repo&lt;/name&gt;</span><br><span class="line">     &lt;url&gt;http://jarsm2.dyndns.dk&lt;/url&gt;</span><br><span class="line">   &lt;/repository&gt;</span><br><span class="line">   &lt;repository&gt;</span><br><span class="line">     &lt;id&gt;my-repo2&lt;/id&gt;</span><br><span class="line">     &lt;name&gt;your custom repo&lt;/name&gt;</span><br><span class="line">     &lt;url&gt;http://jarsm2.dyndns.dk&lt;/url&gt;</span><br><span class="line">   &lt;/repository&gt;</span><br><span class="line"> &lt;/repositories&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/21/add-maven-repository/" data-id="cilsafocw00166lv4dkzljbi5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-spring-Q-A" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/21/spring-Q-A/" class="article-date">
@@ -87,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="cilr7094v00099nv4ts8btfdo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/spring-Q-A/" data-id="cilsafobh00096lv49k8bamqr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -127,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/Idea-Intellj-Q-A/" data-id="cilr7096500219nv494lk9iwq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/Idea-Intellj-Q-A/" data-id="cilsafodj00236lv4xj05hphm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a></li></ul>
@@ -172,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/" data-id="cilr7095d000x9nv4stjkazuz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-from-archetypes/" data-id="cilsafobx000x6lv4hm8rtpod" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -217,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-manully/" data-id="cilr7095c000v9nv4u6q05lzr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/21/create-maven-spring-mvc-manully/" data-id="cilsafobw000v6lv45ljg7r6z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
@@ -257,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/16/install-jdk/" data-id="cilr70952000g9nv4u9mn5whh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/16/install-jdk/" data-id="cilsafobm000g6lv4thudr6sc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK/">JDK</a></li></ul>
@@ -303,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Reset/" data-id="cilr7096800269nv4tfm6dtut" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Reset/" data-id="cilsafodn00286lv4bo3j0y9b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -346,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Checkout/" data-id="cilr7096d002e9nv4nc4uyj5i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Checkout/" data-id="cilsafodr002g6lv4b3qj30op" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -398,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Branch/" data-id="cilr7096e002g9nv4spt0pgeg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Branch/" data-id="cilsafods002i6lv4tr9i8fsh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -439,51 +484,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Fetch/" data-id="cilr7096b002a9nv4yzu1kbul" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Git-Remote" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/06/Git-Remote/" class="article-date">
-  <time datetime="2016-02-05T17:31:35.000Z" itemprop="datePublished">2016-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/06/Git-Remote/">Git Remote</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="u67E5_u770B_u5F53_u524D_u914D_u7F6E_u7684_u8FDC_u7A0B_u4E3B_u673A_u540D"><a href="#u67E5_u770B_u5F53_u524D_u914D_u7F6E_u7684_u8FDC_u7A0B_u4E3B_u673A_u540D" class="headerlink" title="查看当前配置的远程主机名"></a>查看当前配置的远程主机名</h3><p>$ git remote<br>origin</p>
-<h3 id="u67E5_u770B_u8FDC_u7A0B_u4E3B_u673A_u7684_u7F51_u5740"><a href="#u67E5_u770B_u8FDC_u7A0B_u4E3B_u673A_u7684_u7F51_u5740" class="headerlink" title="查看远程主机的网址"></a>查看远程主机的网址</h3><p>$ git remote -v<br>origin  git@github.com:jquery/jquery.git (fetch)<br>origin  git@github.com:jquery/jquery.git (push)</p>
-<h3 id="u53EF_u4EE5_u67E5_u770B_u8BE5_u4E3B_u673A_u7684_u8BE6_u7EC6_u4FE1_u606F"><a href="#u53EF_u4EE5_u67E5_u770B_u8BE5_u4E3B_u673A_u7684_u8BE6_u7EC6_u4FE1_u606F" class="headerlink" title="可以查看该主机的详细信息"></a>可以查看该主机的详细信息</h3><p>$ git remote show &lt;主机名&gt;</p>
-<h3 id="u6DFB_u52A0_u8FDC_u7A0B_u4E3B_u673A"><a href="#u6DFB_u52A0_u8FDC_u7A0B_u4E3B_u673A" class="headerlink" title="添加远程主机"></a>添加远程主机</h3><p>$ git remote add &lt;主机名&gt; &lt;网址&gt;</p>
-<h3 id="u5220_u9664_u8FDC_u7A0B_u4E3B_u673A"><a href="#u5220_u9664_u8FDC_u7A0B_u4E3B_u673A" class="headerlink" title="删除远程主机"></a>删除远程主机</h3><p>$ git remote rm &lt;主机名&gt;</p>
-<h3 id="u8FDC_u7A0B_u4E3B_u673A_u7684_u6539_u540D"><a href="#u8FDC_u7A0B_u4E3B_u673A_u7684_u6539_u540D" class="headerlink" title="远程主机的改名"></a>远程主机的改名</h3><p>$ git remote rename &lt;原主机名&gt; &lt;新主机名&gt;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/06/Git-Remote/" data-id="cilr7096a00289nv4a2zh7fgg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/06/Git-Fetch/" data-id="cilsafodp002c6lv4bkbpy2wn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -510,7 +511,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">5</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C、C/">C、C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/">DataBase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Develop/">Develop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea-Intellj/">Idea Intellj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-OS/">Linux OS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socks5/">Socks5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-os/">linux os</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -519,7 +520,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJS/" style="font-size: 14px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 18px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 14px;">maven</a> <a href="/tags/spring/" style="font-size: 16px;">spring</a>
+      <a href="/tags/AngularJS/" style="font-size: 14px;">AngularJS</a> <a href="/tags/C、C/" style="font-size: 10px;">C、C++</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Develop/" style="font-size: 10px;">Develop</a> <a href="/tags/Git/" style="font-size: 18px;">Git</a> <a href="/tags/Idea-Intellj/" style="font-size: 10px;">Idea Intellj</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Linux-OS/" style="font-size: 20px;">Linux OS</a> <a href="/tags/Socks5/" style="font-size: 12px;">Socks5</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/angularjs/" style="font-size: 12px;">angularjs</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/linux-os/" style="font-size: 10px;">linux os</a> <a href="/tags/maven/" style="font-size: 14px;">maven</a> <a href="/tags/spring/" style="font-size: 16px;">spring</a>
     </div>
   </div>
 
@@ -528,7 +529,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -538,6 +539,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/03/15/angularjs-基本指令/">angularjs 基本指令</a>
+          </li>
         
           <li>
             <a href="/2016/03/14/angularjs-helloworld/">angularjs helloworld</a>
@@ -553,10 +558,6 @@
         
           <li>
             <a href="/2016/02/24/git-stash/">git stash</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/24/git-help/">git help</a>
           </li>
         
       </ul>

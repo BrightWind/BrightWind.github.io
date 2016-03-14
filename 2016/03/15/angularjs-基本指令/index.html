@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>angularjs helloworld | Hexo</title>
+  <title>angularjs 基本指令 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="三个基本因数：angular.jsng-appng-controler
-12345678910111213141516171819202122232425#html&amp;lt;!doctype html&amp;gt;&amp;lt;html&amp;gt;      &amp;lt;head&amp;gt;      &amp;lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angul">
+  <meta name="description" content="(1)ng-app创建angular应用，定义root元素，引导并初始化angular应用，加载相应模块
+(2) ng-init设定初始化数据,例如创建countries变量,init的变量是创建在root元素，且angular绑定的变量可以是app下的变量，controler的变量，scope的变量12345678910111213141516171819202122232425&amp;lt;html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angularjs helloworld">
-<meta property="og:url" content="http://yoursite.com/2016/03/14/angularjs-helloworld/index.html">
+<meta property="og:title" content="angularjs 基本指令">
+<meta property="og:url" content="http://yoursite.com/2016/03/15/angularjs-基本指令/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="三个基本因数：angular.jsng-appng-controler
-12345678910111213141516171819202122232425#html&amp;lt;!doctype html&amp;gt;&amp;lt;html&amp;gt;      &amp;lt;head&amp;gt;      &amp;lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angul">
-<meta property="og:updated_time" content="2016-03-13T23:28:45.000Z">
+<meta property="og:description" content="(1)ng-app创建angular应用，定义root元素，引导并初始化angular应用，加载相应模块
+(2) ng-init设定初始化数据,例如创建countries变量,init的变量是创建在root元素，且angular绑定的变量可以是app下的变量，controler的变量，scope的变量12345678910111213141516171819202122232425&amp;lt;html">
+<meta property="og:updated_time" content="2016-03-14T17:31:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angularjs helloworld">
-<meta name="twitter:description" content="三个基本因数：angular.jsng-appng-controler
-12345678910111213141516171819202122232425#html&amp;lt;!doctype html&amp;gt;&amp;lt;html&amp;gt;      &amp;lt;head&amp;gt;      &amp;lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angul">
+<meta name="twitter:title" content="angularjs 基本指令">
+<meta name="twitter:description" content="(1)ng-app创建angular应用，定义root元素，引导并初始化angular应用，加载相应模块
+(2) ng-init设定初始化数据,例如创建countries变量,init的变量是创建在root元素，且angular绑定的变量可以是app下的变量，controler的变量，scope的变量12345678910111213141516171819202122232425&amp;lt;html">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-angularjs-helloworld" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angularjs-基本指令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/14/angularjs-helloworld/" class="article-date">
-  <time datetime="2016-03-13T23:22:09.000Z" itemprop="datePublished">2016-03-14</time>
+    <a href="/2016/03/15/angularjs-基本指令/" class="article-date">
+  <time datetime="2016-03-14T17:17:45.000Z" itemprop="datePublished">2016-03-15</time>
 </a>
     
   </div>
@@ -77,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      angularjs helloworld
+      angularjs 基本指令
     </h1>
   
 
@@ -85,14 +85,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>三个基本因数：<br>angular.js<br>ng-app<br>ng-controler</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#html</span></span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;head&gt;</span><br><span class="line">      &lt;script src = <span class="string">"https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;body ng-app = <span class="string">"myapp"</span>&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;div ng-controller = <span class="string">"HelloController"</span> &gt;</span><br><span class="line">         &lt;h2&gt;Welcome &#123;&#123;helloTo.title&#125;&#125; to the world of Tutorialspoint!&lt;/h2&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;script&gt;</span><br><span class="line">         angular.module(<span class="string">"myapp"</span>, [])</span><br><span class="line">         </span><br><span class="line">         .controller(<span class="string">"HelloController"</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">            <span class="variable">$scope</span>.helloTo = &#123;&#125;;</span><br><span class="line">            <span class="variable">$scope</span>.helloTo.title = <span class="string">"AngularJS"</span>;</span><br><span class="line">         &#125;);</span><br><span class="line">      &lt;/script&gt;</span><br><span class="line">      </span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>浏览器加载angular.js,angular.js创建全局对象，注册controler,解析html找到绑定controler的view，执行controler函数，将模型数据渲染到view</p>
+        <p>(1)ng-app<br>创建angular应用，定义root元素，引导并初始化angular应用，加载相应模块</p>
+<p>(2) ng-init<br>设定初始化数据,例如创建countries变量,init的变量是创建在root元素，且angular绑定的变量可以是app下的变量，controler的变量，scope的变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;head&gt;</span><br><span class="line">      &lt;title&gt;AngularJS Directives&lt;/title&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;body&gt;</span><br><span class="line">      &lt;h1&gt;Sample Application&lt;/h1&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;div ng-app = <span class="string">""</span> ng-init = <span class="string">"countries = [&#123;locale:'en-US',name:'United States'&#125;, &#123;locale:'en-GB',name:'United Kingdom'&#125;, &#123;locale:'en-FR',name:'France'&#125;]"</span>&gt; </span><br><span class="line">         &lt;p&gt;Enter your Name: &lt;input <span class="built_in">type</span> = <span class="string">"text"</span> ng-model = <span class="string">"name"</span>&gt;&lt;/p&gt;</span><br><span class="line">         &lt;p&gt;Hello &lt;span ng-bind = <span class="string">"name"</span>&gt;&lt;/span&gt;!&lt;/p&gt;</span><br><span class="line">         &lt;p&gt;List of Countries with locale:&lt;/p&gt;</span><br><span class="line">      </span><br><span class="line">         &lt;ol&gt;</span><br><span class="line">            &lt;li ng-repeat = <span class="string">"country in countries"</span>&gt;</span><br><span class="line">               &#123;&#123; <span class="string">'Country: '</span> + country.name + <span class="string">', Locale: '</span> + country.locale &#125;&#125;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">         &lt;/ol&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;script src = <span class="string">"http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">      </span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>(3) ng-model<br>定义模型或变量</p>
+<p>(4) ng-repeat<br>数组绑定指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app = <span class="string">""</span>&gt;</span><br><span class="line">   ...</span><br><span class="line">   &lt;p&gt;List of Countries with locale:&lt;/p&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;ol&gt;</span><br><span class="line">      &lt;li ng-repeat = <span class="string">"country in countries"</span>&gt;</span><br><span class="line">         &#123;&#123; <span class="string">'Country: '</span> + country.name + <span class="string">', Locale: '</span> + country.locale &#125;&#125;</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">   &lt;/ol&gt;</span><br><span class="line">   </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/14/angularjs-helloworld/" data-id="cilsafocu00146lv4g6iq7t7a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/15/angularjs-基本指令/" data-id="cilsafocs00116lv4n6dt2tq8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularjs/">angularjs</a></li></ul>
@@ -103,19 +104,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/15/angularjs-基本指令/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          angularjs 基本指令
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/25/load-resource-file-IOUtils/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/14/angularjs-helloworld/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">load resource file [IOUtils]</div>
+      <div class="article-nav-title">angularjs helloworld</div>
     </a>
   
 </nav>
