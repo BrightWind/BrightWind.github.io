@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>angularjs 基本指令 | Hexo</title>
+  <title>Hexo | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="(1)ng-app创建angular应用，定义root元素，引导并初始化angular应用，加载相应模块
-(2) ng-init设定初始化数据,例如创建countries变量,init的变量是创建在root元素，且angular绑定的变量可以是app下的变量，controler的变量，scope的变量12345678910111213141516171819202122232425&amp;lt;html">
+  <meta name="description" content="hexo doc[https://hexo.io/zh-cn/docs/themes.html]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angularjs 基本指令">
-<meta property="og:url" content="http://yoursite.com/2016/03/15/angularjs-基本指令/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2016/07/08/Others/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="(1)ng-app创建angular应用，定义root元素，引导并初始化angular应用，加载相应模块
-(2) ng-init设定初始化数据,例如创建countries变量,init的变量是创建在root元素，且angular绑定的变量可以是app下的变量，controler的变量，scope的变量12345678910111213141516171819202122232425&amp;lt;html">
-<meta property="og:updated_time" content="2016-03-14T17:31:05.000Z">
+<meta property="og:description" content="hexo doc[https://hexo.io/zh-cn/docs/themes.html]">
+<meta property="og:updated_time" content="2016-07-07T16:26:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angularjs 基本指令">
-<meta name="twitter:description" content="(1)ng-app创建angular应用，定义root元素，引导并初始化angular应用，加载相应模块
-(2) ng-init设定初始化数据,例如创建countries变量,init的变量是创建在root元素，且angular绑定的变量可以是app下的变量，controler的变量，scope的变量12345678910111213141516171819202122232425&amp;lt;html">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="hexo doc[https://hexo.io/zh-cn/docs/themes.html]">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +60,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-angularjs-基本指令" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Others" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/15/angularjs-基本指令/" class="article-date">
-  <time datetime="2016-03-14T17:17:45.000Z" itemprop="datePublished">2016-03-15</time>
+    <a href="/2016/07/08/Others/" class="article-date">
+  <time datetime="2016-07-07T16:24:55.000Z" itemprop="datePublished">2016-07-08</time>
 </a>
     
   </div>
@@ -77,7 +74,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      angularjs 基本指令
+      Hexo
     </h1>
   
 
@@ -85,18 +82,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>(1)ng-app<br>创建angular应用，定义root元素，引导并初始化angular应用，加载相应模块</p>
-<p>(2) ng-init<br>设定初始化数据,例如创建countries变量,init的变量是创建在root元素，且angular绑定的变量可以是app下的变量，controler的变量，scope的变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;head&gt;</span><br><span class="line">      &lt;title&gt;AngularJS Directives&lt;/title&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;body&gt;</span><br><span class="line">      &lt;h1&gt;Sample Application&lt;/h1&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;div ng-app = <span class="string">""</span> ng-init = <span class="string">"countries = [&#123;locale:'en-US',name:'United States'&#125;, &#123;locale:'en-GB',name:'United Kingdom'&#125;, &#123;locale:'en-FR',name:'France'&#125;]"</span>&gt; </span><br><span class="line">         &lt;p&gt;Enter your Name: &lt;input <span class="built_in">type</span> = <span class="string">"text"</span> ng-model = <span class="string">"name"</span>&gt;&lt;/p&gt;</span><br><span class="line">         &lt;p&gt;Hello &lt;span ng-bind = <span class="string">"name"</span>&gt;&lt;/span&gt;!&lt;/p&gt;</span><br><span class="line">         &lt;p&gt;List of Countries with locale:&lt;/p&gt;</span><br><span class="line">      </span><br><span class="line">         &lt;ol&gt;</span><br><span class="line">            &lt;li ng-repeat = <span class="string">"country in countries"</span>&gt;</span><br><span class="line">               &#123;&#123; <span class="string">'Country: '</span> + country.name + <span class="string">', Locale: '</span> + country.locale &#125;&#125;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">         &lt;/ol&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;script src = <span class="string">"http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">      </span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>(3) ng-model<br>定义模型或变量</p>
-<p>(4) ng-repeat<br>数组绑定指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app = <span class="string">""</span>&gt;</span><br><span class="line">   ...</span><br><span class="line">   &lt;p&gt;List of Countries with locale:&lt;/p&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;ol&gt;</span><br><span class="line">      &lt;li ng-repeat = <span class="string">"country in countries"</span>&gt;</span><br><span class="line">         &#123;&#123; <span class="string">'Country: '</span> + country.name + <span class="string">', Locale: '</span> + country.locale &#125;&#125;</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">   &lt;/ol&gt;</span><br><span class="line">   </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+        <p>hexo doc[<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/themes.html</a>]</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/15/angularjs-基本指令/" data-id="ciqcj1u8m0011s0v4m7uge4mm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/08/Others/" data-id="ciqcj1u8y001is0v4jeo84xk8" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularjs/">angularjs</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Others/">Others</a></li></ul>
 
     </footer>
   </div>
@@ -104,19 +98,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/08/Others/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hexo
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/14/angularjs-helloworld/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/15/angularjs-基本指令/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">angularjs helloworld</div>
+      <div class="article-nav-title">angularjs 基本指令</div>
     </a>
   
 </nav>
